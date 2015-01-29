@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="" content=""/>
+		<meta charset="UTF-8"/> 
+		<link type="text/css" rel="stylesheet" href="Other/font-awesome-4.2.0/css/font-awesome.min.css">
+		<link type="text/css" rel="stylesheet" href="Other/bootstrap.css">
+		<style>
+			html {
+			  position: relative;
+			  min-height: 100%;
+			}
+			body {
+				font-family: 'Lato', helvetica, arial, sans-serif;
+				font-size: 14px; 
+				color: #222;
+			}
+			.clear {
+				clear: both;
+			}
+			body {
+			  margin-top: 20px;
+			  padding-bottom: 20px;
+			}
+			
+			
+			
+			
+			.hiddenRow {
+				padding: 0 !important;
+			}
+			colgroup col.success {
+			  background-color: #dff0d8;
+			}
+			colgroup col.error{
+			  background-color: #f2dede;
+			}
+			colgroup col.warning {
+			  background-color: #fcf8e3;
+			}
+			colgroup col.info {
+			  background-color: #d9edf7;
+			}
+			.highlight{
+			 color: red;
+			}
+			
+			
+			
+			.tabs-below > .nav-tabs,
+			.tabs-right > .nav-tabs,
+			.tabs-left > .nav-tabs {
+			  border-bottom: 0;
+			}
+
+			.tab-content > .tab-pane,
+			.pill-content > .pill-pane {
+			  display: none;
+			}
+
+			.tab-content > .active,
+			.pill-content > .active {
+			  display: block;
+			}
+
+			.tabs-below > .nav-tabs {
+			  border-top: 1px solid #ddd;
+			}
+
+			.tabs-below > .nav-tabs > li {
+			  margin-top: -1px;
+			  margin-bottom: 0;
+			}
+
+			.tabs-below > .nav-tabs > li > a {
+			  -webkit-border-radius: 0 0 4px 4px;
+				 -moz-border-radius: 0 0 4px 4px;
+					  border-radius: 0 0 4px 4px;
+			}
+
+			.tabs-below > .nav-tabs > li > a:hover,
+			.tabs-below > .nav-tabs > li > a:focus {
+			  border-top-color: #ddd;
+			  border-bottom-color: transparent;
+			}
+
+			.tabs-below > .nav-tabs > .active > a,
+			.tabs-below > .nav-tabs > .active > a:hover,
+			.tabs-below > .nav-tabs > .active > a:focus {
+			  border-color: transparent #ddd #ddd #ddd;
+			}
+
+			.tabs-left > .nav-tabs > li,
+			.tabs-right > .nav-tabs > li {
+			  float: none;
+			}
+
+			.tabs-left > .nav-tabs > li > a,
+			.tabs-right > .nav-tabs > li > a {
+			  min-width: 74px;
+			  margin-right: 0;
+			  margin-bottom: 3px;
+			}
+
+			.tabs-left > .nav-tabs {
+			  float: left;
+			  margin-right: 19px;
+			  border-right: 1px solid #ddd;
+			}
+
+			.tabs-left > .nav-tabs > li > a {
+			  margin-right: -1px;
+			  -webkit-border-radius: 4px 0 0 4px;
+				 -moz-border-radius: 4px 0 0 4px;
+					  border-radius: 4px 0 0 4px;
+			}
+
+			.tabs-left > .nav-tabs > li > a:hover,
+			.tabs-left > .nav-tabs > li > a:focus {
+			  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+			}
+
+			.tabs-left > .nav-tabs .active > a,
+			.tabs-left > .nav-tabs .active > a:hover,
+			.tabs-left > .nav-tabs .active > a:focus {
+			  border-color: #ddd transparent #ddd #ddd;
+			  *border-right-color: #ffffff;
+			}
+
+			.tabs-right > .nav-tabs {
+			  float: right;
+			  margin-left: 19px;
+			  border-left: 1px solid #ddd;
+			}
+
+			.tabs-right > .nav-tabs > li > a {
+			  margin-left: -1px;
+			  -webkit-border-radius: 0 4px 4px 0;
+				 -moz-border-radius: 0 4px 4px 0;
+					  border-radius: 0 4px 4px 0;
+			}
+
+			.tabs-right > .nav-tabs > li > a:hover,
+			.tabs-right > .nav-tabs > li > a:focus {
+			  border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+			}
+
+			.tabs-right > .nav-tabs .active > a,
+			.tabs-right > .nav-tabs .active > a:hover,
+			.tabs-right > .nav-tabs .active > a:focus {
+			  border-color: #ddd #ddd #ddd transparent;
+			  *border-left-color: #ffffff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+		<h2 style="padding-bottom: 20px;">Using Summyjs to route Bootstrap Tabs</h2>
+			<div class="navbar-header">
+			  <a class="navbar-brand" data-toggle="" data-target="#bs-example-navbar-collapse-1" href="#">My Resume</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div style="" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul id="myTab" class="nav nav-tabs nav-justified"> 
+				   <li><a href="#home" data-toggle="tab">PERSONAL SUMMARY</a> </li> 
+				   <li><a href="#ios" data-toggle="tab">AREAS OF EXPERIENCE</a></li> 
+				   <li><a data-target="#jmeter" data-toggle="tab">CAREER SKILLS</a> </li> 
+				   <li><a href="#ejb" data-toggle="tab">PERSONAL DETAILS</a> </li> 
+				</ul> 
+			</div>
+			
+			<div class="clear"></div>
+			
+			
+			<div style="padding-top: 20px;" id="myTabContent" class="tab-content"> 
+			
+				<!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+				<!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+				<!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+			   <div class="tab-pane fade in active" id="home"> 
+				  <form id="" class="form-horizontal" role="form" style="background-color:#E0EAF1; padding:20px; border:4px solid #AAA;font-size:1.2em;">
+						<div class="panel panel-default">
+						  <!-- Default panel contents -->
+						  <div class="panel-heading" style="font-size:1.5em;">Panel heading</div>
+
+						  <!-- Table 1 --
+						  <table class="table table-striped">
+							<thead>
+							  <tr>
+								<th style="width:3%;">#</th>
+								<th style="width:28%;">First Name</th>
+								<th style="width:28%;">Last Name</th>
+								<th style="width:28%;">Username</th>
+								<th style="width:13%;">Action</th>
+							  </tr>
+							</thead>
+							<tbody id="showDetail">
+							  <tr>
+								<td>1</td>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>@mdo</td>
+								<td><div class="btn-group">
+									  <button type="button" class="btn btn-default" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">View</button>
+									  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Edit</a></li>
+										<li><a href="#">Delete</a></li>
+										<li><a href="#">Select</a></li>
+									  </ul>
+									</div>
+									<span style="padding-left:5px; font-size:1.5em;"> <input style="font-size:1.5em;" type="checkbox"> </span>
+								</td>
+							  </tr>
+							  <!-- ////////////////////////////////////////// >
+							  <div class="hide">
+							  </tbody>
+							  </table>
+								<ul id="DetailContainer" class="list-group">
+									<li class="list-group-item">
+										<div id="collapseThree" class="collapse">
+											<p style="color:#999999; font-size:18px;">Please put a space, comma or press Enter after every ..... Write very short explanations of how you are feeling. include everything you are feeling...</p>
+										</div>
+									</li>
+								</ul>
+							  <table class="table table-striped">
+								<thead class="">
+								  <tr>
+									<th style="width:3%;"></th>
+									<th style="width:28%;"></th>
+									<th style="width:28%;"></th>
+									<th style="width:28%;"></th>
+									<th style="width:13%;"></th>
+								  </tr>
+								</thead>
+							  <tbody>
+							  </div>
+							  <!-- ////////////////////////////////////////// --
+							  <tr>
+								<td>2</td>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@fat</td>
+								<td><div class="btn-group">
+									  <button type="button" class="btn btn-default">Edit this</button>
+									  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+									<span style="padding-left:5px; font-size:1.5em;"> <input style="font-size:1.5em;" type="checkbox"> </span>
+								</td>
+							  </tr>
+							  
+							  <tr>
+								<td>3</td>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+								<td><div class="btn-group">
+									  <button type="button" class="btn btn-default">Edit this</button>
+									  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+									<span style="padding-left:5px; font-size:1.5em;"> <input style="font-size:1.5em;" type="checkbox"> </span>
+								</td>
+							  </tr>
+							  
+								<tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle" >
+									<td>1</td>
+									<td>05 May 2013</td>
+									<td>Credit Account</td>
+									<td class="text-success">$150.00</td>
+									<td class="text-success">$150.00</td>
+										<tr class="accordion-body collapse" id="demo1"> 
+											<td colspan="6" class="hiddenRow">
+												<div>Demo2</div>
+											</td>
+										</tr>    
+								</tr>
+								
+								<tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
+									<td>1</td>
+									<td>05 May 2013</td>
+									<td>Credit Account</td>
+									<td class="text-success">$150.00</td>
+									<td class="text-success">$150.00</td>
+									<tr>
+										<td colspan="6" class="hiddenRow">
+											<div class="accordion-body collapse" id="demo2">Demo2</div>
+										</td>
+									</tr>
+								</tr>
+
+								
+								
+							</tbody>
+						  </table> -->
+						  
+						  <table class="table table-condensed" style="border-collapse:collapse;">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>Date</th>
+										<th>Description</th>
+										<th>Credit</th>
+										<th>Debit</th>
+										<th>Balance</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr data-toggle="collapse" data-target="#demo1">
+										<td>1</td>
+										<td>05 May 2013</td>
+										<td>Credit Account</td>
+										<td class="text-success">$150.00</td>
+										<td class="text-error"></td>
+										<td class="text-success">$150.00</td>
+										<tr>
+											<td colspan="6" class="hiddenRow">
+												<div id="demo1" class="collapse">Demo1</div>
+											</td>
+										</tr>
+									</tr>
+									
+									<tr data-toggle="collapse" data-target="#demo2">
+										<td>2</td>
+										<td>05 May 2013</td>
+										<td>Credit Account</td>
+										<td class="text-success">$11.00</td>
+										<td class="text-error"></td>
+										<td class="text-success">$161.00</td>
+										<tr>
+											<td colspan="6" class="hiddenRow">
+												<div id="demo2" class="collapse">Demo2</div>
+											</td>
+										</tr>
+									</tr>
+									
+									<tr data-toggle="collapse" data-target="#demo3">
+										<td>3</td>
+										<td>05 May 2013</td>
+										<td>Credit Account</td>
+										<td class="text-success">$500.00</td>
+										<td class="text-error"></td>
+										<td class="text-success">$661.00</td>
+										<tr>
+											<td colspan="6" class="hiddenRow">
+												<div id="demo3" class="collapse">Demo3</div>
+											</td>
+										</tr>
+									</tr>
+								</tbody>
+							</table>
+							
+							
+							
+						  
+							
+						</div>		
+									
+					</form>
+					
+					<table class="table table-condensed">
+								<colgroup>
+									<col></col>
+									<col span="2" class="info"></col>
+									<col span="2" class="success"></col>
+								</colgroup>
+								<thead>
+									<tr>
+										<td></td>
+										<td colspan="2" style="text-align: center;">Current</td>
+										<td colspan="2" style="text-align: center;">New</td>
+									</tr>
+									<tr>
+										<th>ID</th>
+										<th>First Name</th>
+										<th>Last Name</th>
+										<th>Fisrt Name</th>
+										<th>Last Name</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>John</td>
+										<td>Bauer</td>
+										<td>Jack</td>
+										<td>Bauer</td>
+									</tr>
+								</tbody>
+							</table>
+							
+							<table border="1" class = "table table-hover">
+								<tr>
+								   <td>
+									   row 1 cell 1
+									</td>   
+								</tr>
+								<tr>
+								   <td>
+									   row 2 cell 1
+									</td>   
+								</tr>
+									<tr>
+								   <td>
+									   row 3 cell 1
+									</td>   
+								</tr>
+							</table>
+			   </div> 
+			   
+			   
+			   
+			   <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+			   <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+			   <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+			   <div class="tab-pane fade" id="ios"> 
+				       <div>
+						 <h3>Version Information:</h3>
+						 <div class="tabbable tabs-left">
+							 <ul id="myTab2" class="nav nav-tabs" data-tabs="tabs" style="width:500px;">
+								 <li class="active">
+									 <a href="#1" data-toggle="tab">1</a>
+								 </li>
+								 <li >
+									 <a href="#2" data-toggle="tab">2</a>
+								 </li>
+								 <li >
+									 <a href="#3" data-toggle="tab">3</a>
+								 </li>
+							 </ul>
+							 <div class="tab-content">
+								 <div class="tab-pane active" id="First" >
+									 <p> First Content </p>
+								 </div>
+								 <div class="tab-pane" id="Second" >
+									 <p> Second Content </p>
+								 </div>
+								 <div class="tab-pane" id="Third" >
+									 <p> Third Content </p>
+								 </div>
+							 </div>
+						 </div>
+						 </div>
+			   </div> 
+			   
+			   
+			   
+			   <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+			   <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+			   <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+			   <div class="tab-pane fade" id="jmeter"> 
+				  <div class="row">
+					  <!-- Navigation Buttons -->
+					  <div class="col-md-3">
+						<ul class="nav nav-pills nav-stacked" id="myTabs">
+						  <li class="active"><a href="#home2" data-toggle="tab">Home</a></li>
+						  <li><a href="#profile" data-toggle="tab">Profile</a></li>
+						  <li><a href="#messages" data-toggle="tab">Messages</a></li>
+						</ul>
+					  </div>
+
+					  <!-- Content -->
+					  <div class="col-md-9">
+						<div class="tab-content">
+						  <div class="tab-pane fade in active" id="home2">Home</div>
+						  <div class="tab-pane fade" id="profile">Profile</div>
+						  <div class="tab-pane fade" id="messages">Messages</div>
+						</div>
+					  </div>
+
+					</div>
+			   </div> 
+			   
+			   
+			   
+			   <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+			   <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+			   <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+			   <div class="tab-pane fade" id="ejb"> 
+				  <p>Enterprise Java Beans (EJB) is a development architecture           for building highly scalable and robust enterprise level     
+					 applications to be deployed on J2EE compliant           Application Server such as JBOSS, Web Logic etc. 
+				  </p> 
+			   </div> 
+			</div> 
+		</div>
+	</body>
+	
+	<script type='text/javascript' src="Other/jquery.js"></script>
+	<script type='text/javascript' src="Other/bootstrap.js"></script>
+	<script type="text/javascript" src="Other/summyjs/min/sammy-0.7.6.min.js"></script>
+	<script type="text/javascript">
+
+        //Update the URL with the current tabs hash
+        $("#myTab a").click(function () { location.hash = $(this).attr('href'); });
+
+
+        function ShowTab(tabname) {
+            //Show the selected tab
+			//alert('hi');
+            $('#myTab a[href="#' + tabname + '"]').tab('show');
+        }
+
+        // Client-side routes    
+        Sammy(function () {
+            this.get('#:selectedtab', function () {
+               //alert('I GOT IT...');
+                ShowTab(this.params.selectedtab);
+            });
+			
+
+            //default to the first tab if there is no hash in the URL
+            this.get('', function () { this.app.runRoute('get', '#home') });
+        }).run();
+
+    </script>
+	
+	<!--script type="text/javascript">
+	$("#myTab a").click(function () { location.hash = $(this).attr('href'); });
+	
+	$(document).ready(function () {
+		var app = Sammy('body');
+		$(document).ready(function() {
+			app.run('#/');
+		});
+	});
+	
+	function ShowTab(tabname) {
+        //Show the selected tab
+        $('#myTab a[href="#' + tabname + '"]').tab('show');
+    }
+	
+	$(document).ready(function () {
+		var app = Sammy.apps.body;
+		app.get('#/', function(context) {
+			console.log("PERSONAL SUMMARY");
+		});
+		
+	});
+	
+	$(document).ready(function () {
+		var app = Sammy.apps.body;
+		app.get('#/ios', function(context) {
+			//$('#myTab a[href="#ios"]').tab('show');
+			ShowTab(context.params.ios);
+		});
+	});
+    </script-->
+	
+	<script>
+		$('.collapse').on('show.bs.collapse', function () {
+			$('.collapse.in').collapse('hide');
+		});
+	</script>
+	<script>
+	$('table').on('click','tr',function(e){
+	   $('table').find('tr.highlight').removeClass('highlight');
+	  $(this).addClass('highlight');
+	})
+	</script>
+</html>

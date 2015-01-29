@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="" content=""/>
+		<meta charset="UTF-8"/> 
+		<link type="text/css" rel="stylesheet" href="Other/font-awesome-4.2.0/css/font-awesome.min.css">
+		<link type="text/css" rel="stylesheet" href="Other/pace-theme-bounce.css">
+		<link type="text/css" rel="stylesheet" href="Other/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="Other/bootstrapValidator.css">
+		<link type="text/css" rel="stylesheet" href="Other/edu.css">
+		<link type="text/css" rel="stylesheet" href="Other/typeaheadjs.css">
+		
+		<!--[if lt IE 9]>
+		<script src="html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+	
+	<!-- Fixed navbar -->
+			<div class="quickFade navbar navbar-inverse navbar-fixed-top" role="navigation">
+			  <div style="margin: 0 30px 0 30px;">
+			  
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a style="" class="navbar-brand" href="Home.html">Edu</a>
+				</div>
+				
+				<div class="navbar-collapse collapse">
+					  <ul class="nav navbar-nav">
+						  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Curriculum<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Course Outline</a></li>
+							  <li><a href="#">Notes</a></li>
+							  <li class="divider"></li>
+							  <li><a href="#">TimeTabling</a></li>
+							  <li class="divider"></li>
+							  <li><a href="#">Virtual Class</a></li>
+							  <li><a href="#">Assignment</a></li>
+							  <li><a href="#">Online Exam</a></li>
+							</ul>
+						  </li>
+						  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Revision<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Ask Question</a></li>
+							  <li><a href="#">Submit Paper</a></li>
+							  <li class="divider"></li>
+							  <li><a href="#">Past Questions</a></li>
+							  <li><a href="PastPaper.html">PastPapers</a></li>
+							</ul>
+						  </li>
+						  <li><a href="#">Advanced Search</a></li>
+
+						  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Discussion<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Start Discussion</a></li>
+							  <li><a href="#">Popular Discussions</a></li>
+							  <li class="divider"></li>
+							  <li><a href="#">Create Group</a></li>
+							  <li><a href="#">Popular Groups</a></li>
+							</ul>
+						  </li>
+						  
+						  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Medical<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Guidance & Cancelling</a></li>
+							  <li><a href="#">Diagnosis</a></li>
+							  <li><a href="#">Stress Management</a></li>
+							  <li class="divider"></li>
+							  <li class="dropdown-header">NAV HEADER</li>
+							  <li><a href="#">Separated link</a></li>
+							  <li><a href="#">One more separated link</a></li>
+							</ul>
+						  </li>
+						  
+						  <li><a href="#">Suggestion Box</a></li>
+						  
+						  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Blogs<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Students Blog</a></li>
+							  <li><a href="#">Fashion & LifeStyle Blog</a></li>
+							  <li class="divider"></li>
+							  <li class="dropdown-header">Edu</li>
+							  <li><a href="#">Development Blog</a></li>
+							  <li><a href="#">UX Blog</a></li>
+							  <li><a href="#">Marketing Blog</a></li>
+							</ul>
+						  </li>
+					   </ul>
+					   
+					   <ul class="nav navbar-nav navbar-right">
+							<li><a style="" class="navbar-brand" href="Dashboard.html">Dashboard</a></li>
+						</ul>
+				</div><!--/.nav-collapse -->
+			  </div>
+			</div>
+			<!-- END Fixed navbar -->
+			
+			<!--login modal-->
+			<div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog">
+					<div style="" id="headshot" class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+							<h2 class="text-center"><img src="headshot.jpg" ><br>Login</h2>
+						</div>
+						<div class="modal-body">
+							<form id="loginForm" class="navbar-form form" role="form" data-bind="submit: GetToken">
+								<div class="form-group">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+										<!--EMAIL ADDRESS-->
+										<input name="username" placeholder="user name" class="form-control control-label">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+											<!--PASSWORD-->
+										<input name="password" ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="password" class="form-control control-label" type="password">
+									</div>
+								</div>
+								<div class="form-group">
+									<!--BUTTON-->
+									<button type="submit" class="btn btn-success form-control">Login</button>
+								</div>
+								<div class="form-group pull-right">
+									<!--BUTTON-->
+									<button class="btn btn-danger form-control" data-dismiss="modal" aria-hidden="true">Cancel</button>
+								</div>
+								<div class="clear"></div>
+								<div class="form-group">
+									<!--RESET PASSWORD LINK-->
+									<span class=""><a href="#">Forgot Password?</a></span>
+								</div>
+								<div class="clear"></div>
+								<div class="form-group">
+									<!--Register LINK-->
+									<span class=""><a href="#signupModal" data-toggle="modal" data-dismiss="modal" aria-hidden="true">New User? Register...</a></span>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--END login modal-->
+			<!--sign up modal-->
+			<div id="signupModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+				 <div class="modal-dialog">
+					<div id="headshot" class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+							<h2 class="text-center"><img src="headshot.jpg" ><br>SignUp</h2>
+						</div>
+						<div class="modal-body">
+							<form id="signupForm" class="navbar-form form" role="form" data-bind="submit: SignUp">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                            <input placeholder="user name" class="form-control" name="username">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                            <input placeholder="first name" class="form-control" name="firstname">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                            <input placeholder="last name" class="form-control" name="lastname">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                            <!--EMAIL ADDRESS-->
+                                            <input ffpdm="sllsk9tlqkgb19q0h93te" id="emailInput" placeholder="email address" class="form-control" type="email" name="email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+                                            <!--PASSWORD-->
+                                            <input ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="password" class="form-control" type="password" name="password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+                                            <!--PASSWORD-->
+                                            <input ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="confirm password" class="form-control" type="password" name="confirmpassword">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!--BUTTON-->
+                                        <button type="submit" class="btn btn-success form-control">Sign Up</button>
+                                    </div>
+									<div class="form-group pull-right">
+										<!--BUTTON-->
+										<button class="btn btn-danger form-control" data-dismiss="modal" aria-hidden="true">Cancel</button>
+									</div>
+									
+                            </form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--END sign up modal-->
+			<!--share Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div style="width: 400px;" class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="myModalLabel"><i class="fa fa-share-alt"></i> Share</h4>
+				  </div>
+				  <div class="modal-body">
+					<p><a title="Facebook" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></a> <a title="Twitter" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></a> <a title="Google+" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-google-plus fa-stack-1x"></i></span></a> <a title="Linkedin" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-linkedin fa-stack-1x"></i></span></a> <a title="Reddit" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x"></i></span></a> <a title="WordPress" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-wordpress fa-stack-1x"></i></span></a> <a title="Digg" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-digg fa-stack-1x"></i></span></a>  <a title="Stumbleupon" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-stumbleupon fa-stack-1x"></i></span></a><a title="E-mail" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x"></i></span></a>  <a title="Print" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-print fa-stack-1x"></i></span></a></p>
+					
+							<!--<h2><i class="fa fa-envelope"></i> Newsletter</h2>
+							<p>Subscribe to our weekly Newsletter and stay tuned.</p>
+							<form action="" method="post">
+								<div class="input-group">
+								  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+								  <input class="form-control" placeholder="your@email.com" type="email">
+								</div>
+								<br>
+								<button type="submit" value="sub" name="sub" class="btn btn-primary"><i class="fa fa-share"></i> Subscribe Now!</button>
+							</form>-->
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<!--End of share Modal -->
+			
+		<div class="clear"></div>
+		<div style="margin-top:50px;" class="row instaFade" id="">
+		
+		
+		<!-- Carousel
+			================================================== -->
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			  </ol>
+			  <div class="carousel-inner">
+				<div class="item active">
+				  <img src="Other/Wallpaper_16.jpg" alt="First slide">
+				  <div class="">
+				  
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+								<div class="input-group">
+								  <input type="text" class="form-control" placeholder="Search Questions, Exams, PastPapers, Assignments, or just ANYTHING ACADEMIC!!" id="search">
+								  <span style="cursor: pointer;" class="input-group-addon"><i class="glyphicon glyphicon-search color-blue"></i></span>
+								</div><!-- /input-group -->
+						</div>
+					</div>
+					
+					<div class="carousel-caption">
+					  <h1>Example headline.</h1>
+					  <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+					  <p><a class="btn btn-lg btn-primary" href="carousel.html#" role="button">Sign up today</a></p>
+					</div>
+				  </div>
+				</div>
+				<div class="item">
+				  <img src="Other/Wallpaper_57.jpg" alt="Second slide">
+				  <div class="">
+				  
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+								<div class="input-group">
+								  <input type="text" class="form-control" placeholder="Search Questions, Exams, PastPapers, Assignments, or just ANYTHING ACADEMIC!!" id="search">
+								  <span style="cursor: pointer;" class="input-group-addon"><i class="glyphicon glyphicon-search color-blue"></i></span>
+								</div><!-- /input-group -->
+						</div>
+					</div>
+					
+					<div class="carousel-caption">
+					  <h1>Another example headline.</h1>
+					  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+					  <p><a class="btn btn-lg btn-primary" href="carousel.html#" role="button">Learn more</a></p>
+					</div>
+				  </div>
+				</div>
+				<div class="item">
+				  <img src="Other/Wallpaper_41.jpg" alt="Third slide">
+				  <div class="">
+				  
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+								<div class="input-group">
+								  <input type="text" class="form-control" placeholder="Search Questions, Exams, PastPapers, Assignments, or just ANYTHING ACADEMIC!!" id="search">
+								  <span style="cursor: pointer;" class="input-group-addon"><i class="glyphicon glyphicon-search color-blue"></i></span>
+								</div><!-- /input-group -->
+						</div>
+					</div>
+					
+					<div class="carousel-caption">
+					  <h1>One more for good measure.</h1>
+					  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+					  <p><a class="btn btn-lg btn-primary" href="carousel.html#" role="button">Browse gallery</a></p>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			  <a class="left carousel-control" href="carousel.html#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+			  <a class="right carousel-control" href="carousel.html#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+			</div><!-- /.carousel -->
+		
+			<!-- <div style="height:314px;" class="row">
+				<div class="col-md-6 col-md-offset-3">
+						<div class="input-group">
+						  <input type="text" class="form-control" placeholder="Search any questions">
+						  <span style="cursor: pointer;" class="input-group-addon"><i class="glyphicon glyphicon-search color-blue"></i></span>
+						</div><!-- /input-group --
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<span style="font-size: 22px; line-height: 1.5;">Twitter's software engineers work on exciting problems at huge scale. Twitter's software engineers work on exciting problems at huge scale.</span>
+				</div>
+			</div> -->
+		</div>
+		
+		<div class="clear"></div>
+		<div class="row HomeMainBody instaFade">
+			<div class="panel-group" id="accordion">
+			  <div class="panel panel-default">
+				<div class="panel-heading">
+				  <h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+					  About Curriculum
+					</a>
+				  </h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse in">
+				  <div class="panel-body">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+				  </div>
+				</div>
+			  </div>
+			  <div class="panel panel-default">
+				<div class="panel-heading">
+				  <h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+					  About Revision
+					</a>
+				  </h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse">
+				  <div class="panel-body">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+				  </div>
+				</div>
+			  </div>
+			  <div class="panel panel-default">
+				<div class="panel-heading">
+				  <h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+					  About Discussion
+					</a>
+				  </h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse">
+				  <div class="panel-body">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+				  </div>
+				</div>
+			  </div>
+			  <div class="panel panel-default">
+				<div class="panel-heading">
+				  <h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+					  About Medical
+					</a>
+				  </h4>
+				</div>
+				<div id="collapseFour" class="panel-collapse collapse">
+				  <div class="panel-body">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+				  </div>
+				</div>
+			  </div>
+			  <div class="panel panel-default">
+				<div class="panel-heading">
+				  <h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+					  About Blogs
+					</a>
+				  </h4>
+				</div>
+				<div id="collapseFive" class="panel-collapse collapse">
+				  <div class="panel-body">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+				  </div>
+				</div>
+			  </div>
+			</div>
+		
+		</div>
+		
+		<div class="clear"></div>
+		<div class="quickFade" id="footer">
+			<h2>Place sticky footer content here.</h2>
+		</div>
+		
+		
+	</body>
+	<script type='text/javascript' src="Other/jquery.js"></script>
+	<script type='text/javascript' src="Other/bootstrap.js"></script>
+	<script type='text/javascript' src="Other/straight.js"></script>
+	<script type='text/javascript' src="Other/pace.js"></script>
+	<script type='text/javascript' src="Other/bootstrapValidator.js"></script>
+	<script type='text/javascript' src="Other/myValidate.js"></script>
+	<script type='text/javascript' src="Other/typeahead/typeahead.bundle.js"></script>
+	<script type="text/javascript">
+		var states = new Bloodhound({
+        datumTokenizer: function(d) { 
+          return Bloodhound.tokenizers.whitespace(d.val); 
+        },
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        local: [
+          { val: 'Alabama' },
+          { val: 'Alaska' },
+          { val: 'Arizona' },
+          { val: 'Arkansas' },
+          { val: 'California' },
+          { val: 'Colorado' },
+          { val: 'Connecticut' },
+          { val: 'Delaware' },
+          { val: 'Florida' },
+          { val: 'Georgia' },
+          { val: 'Hawaii' },
+          { val: 'Idaho' },
+          { val: 'Illinois' },
+          { val: 'Indiana' },
+          { val: 'Iowa' },
+          { val: 'Kansas' },
+          { val: 'Kentucky' },
+          { val: 'Louisiana' },
+          { val: 'Maine' },
+          { val: 'Maryland' },
+          { val: 'Massachusetts' },
+          { val: 'Michigan' },
+          { val: 'Minnesota' },
+          { val: 'Mississippi' },
+          { val: 'Missouri' },
+          { val: 'Montana' },
+          { val: 'Nebraska' },
+          { val: 'Nevada' },
+          { val: 'New Hampshire' },
+          { val: 'New Jersey' },
+          { val: 'New Mexico' },
+          { val: 'New York' },
+          { val: 'North Carolina' },
+          { val: 'North Dakota' },
+          { val: 'Ohio' },
+          { val: 'Oklahoma' },
+          { val: 'Oregon' },
+          { val: 'Pennsylvania' },
+          { val: 'Rhode Island' },
+          { val: 'South Carolina' },
+          { val: 'South Dakota' },
+          { val: 'Tennessee' },
+          { val: 'Texas' },
+          { val: 'Utah' },
+          { val: 'Vermont' },
+          { val: 'Virginia' },
+          { val: 'Washington' },
+          { val: 'West Virginia' },
+          { val: 'Wisconsin' },
+          { val: 'Wyoming' }
+        ]
+      });
+
+      states.initialize();
+
+      $('#search').typeahead({
+        highlight: true
+      },
+      {
+        displayKey: 'val',
+        source: states.ttAdapter()
+      });
+	</script>
+	<script>
+		$(function(){
+			$('#like, #dislike, #share').tooltip();
+		});
+	</script>
+	
+</html>

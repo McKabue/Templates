@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="" content=""/>
+		<meta charset="UTF-8"/> 
+		<link type="text/css" rel="stylesheet" href="Other/font-awesome-4.2.0/css/font-awesome.min.css">
+		<link type="text/css" rel="stylesheet" href="Other/pace-theme-bounce.css">
+		<link type="text/css" rel="stylesheet" href="Other/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="Other/bootstrapValidator.css">
+		<link type="text/css" rel="stylesheet" href="Other/edu.css">
+		<link type="text/css" rel="stylesheet" href="Other/typeaheadjs.css">
+		
+		<!--[if lt IE 9]>
+		<script src="html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+	
+	<!-- Fixed navbar -->
+			<div class="quickFade navbar navbar-inverse navbar-fixed-top" role="navigation">
+			  <div style="margin: 0 30px 0 30px;">
+			  
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a style="" class="navbar-brand" href="Home.html">Edu</a>
+				</div>
+				
+				<div class="navbar-collapse collapse">
+					  <ul class="nav navbar-nav">
+						  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Curriculum<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Course Outline</a></li>
+							  <li><a href="#">Notes</a></li>
+							  <li class="divider"></li>
+							  <li><a href="#">TimeTabling</a></li>
+							  <li class="divider"></li>
+							  <li><a href="#">Virtual Class</a></li>
+							  <li><a href="#">Assignment</a></li>
+							  <li><a href="#">Online Exam</a></li>
+							</ul>
+						  </li>
+						  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Revision<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Ask Question</a></li>
+							  <li><a href="#">Submit Paper</a></li>
+							  <li class="divider"></li>
+							  <li><a href="#">Past Questions</a></li>
+							  <li><a href="#">PastPapers</a></li>
+							</ul>
+						  </li>
+						  <li><a href="#">Advanced Search</a></li>
+
+						  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Discussion<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Start Discussion</a></li>
+							  <li><a href="#">Popular Discussions</a></li>
+							  <li class="divider"></li>
+							  <li><a href="#">Create Group</a></li>
+							  <li><a href="#">Popular Groups</a></li>
+							</ul>
+						  </li>
+						  
+						  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Medical<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Guidance & Cancelling</a></li>
+							  <li><a href="#">Diagnosis</a></li>
+							  <li><a href="#">Stress Management</a></li>
+							  <li class="divider"></li>
+							  <li class="dropdown-header">NAV HEADER</li>
+							  <li><a href="#">Separated link</a></li>
+							  <li><a href="#">One more separated link</a></li>
+							</ul>
+						  </li>
+						  
+						  <li><a href="#">Suggestion Box</a></li>
+						  
+						  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Blogs<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Students Blog</a></li>
+							  <li><a href="#">Fashion & LifeStyle Blog</a></li>
+							  <li class="divider"></li>
+							  <li class="dropdown-header">Edu</li>
+							  <li><a href="#">Development Blog</a></li>
+							  <li><a href="#">UX Blog</a></li>
+							  <li><a href="#">Marketing Blog</a></li>
+							</ul>
+						  </li>
+					   </ul>
+					   
+					   <ul class="nav navbar-nav navbar-right">
+							<li><a style="" class="navbar-brand" href="Dashboard.html">Dashboard</a></li>
+						</ul>
+				</div><!--/.nav-collapse -->
+			  </div>
+			</div>
+			<!-- END Fixed navbar -->
+			
+			<!--login modal-->
+			<div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog">
+					<div style="" id="headshot" class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+							<h2 class="text-center"><img src="headshot.jpg" ><br>Login</h2>
+						</div>
+						<div class="modal-body">
+							<form id="loginForm" class="navbar-form form" role="form" data-bind="submit: GetToken">
+								<div class="form-group">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+										<!--EMAIL ADDRESS-->
+										<input name="username" placeholder="user name" class="form-control control-label">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+											<!--PASSWORD-->
+										<input name="password" ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="password" class="form-control control-label" type="password">
+									</div>
+								</div>
+								<div class="form-group">
+									<!--BUTTON-->
+									<button type="submit" class="btn btn-success form-control">Login</button>
+								</div>
+								<div class="form-group pull-right">
+									<!--BUTTON-->
+									<button class="btn btn-danger form-control" data-dismiss="modal" aria-hidden="true">Cancel</button>
+								</div>
+								<div class="clear"></div>
+								<div class="form-group">
+									<!--RESET PASSWORD LINK-->
+									<span class=""><a href="#">Forgot Password?</a></span>
+								</div>
+								<div class="clear"></div>
+								<div class="form-group">
+									<!--Register LINK-->
+									<span class=""><a href="#signupModal" data-toggle="modal" data-dismiss="modal" aria-hidden="true">New User? Register...</a></span>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--END login modal-->
+			<!--sign up modal-->
+			<div id="signupModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+				 <div class="modal-dialog">
+					<div id="headshot" class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+							<h2 class="text-center"><img src="headshot.jpg" ><br>SignUp</h2>
+						</div>
+						<div class="modal-body">
+							<form id="signupForm" class="navbar-form form" role="form" data-bind="submit: SignUp">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                            <input placeholder="user name" class="form-control" name="username">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                            <input placeholder="first name" class="form-control" name="firstname">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                            <input placeholder="last name" class="form-control" name="lastname">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                            <!--EMAIL ADDRESS-->
+                                            <input ffpdm="sllsk9tlqkgb19q0h93te" id="emailInput" placeholder="email address" class="form-control" type="email" name="email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+                                            <!--PASSWORD-->
+                                            <input ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="password" class="form-control" type="password" name="password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+                                            <!--PASSWORD-->
+                                            <input ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="confirm password" class="form-control" type="password" name="confirmpassword">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!--BUTTON-->
+                                        <button type="submit" class="btn btn-success form-control">Sign Up</button>
+                                    </div>
+									<div class="form-group pull-right">
+										<!--BUTTON-->
+										<button class="btn btn-danger form-control" data-dismiss="modal" aria-hidden="true">Cancel</button>
+									</div>
+									
+                            </form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--END sign up modal-->
+			<!--share Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div style="width: 400px;" class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="myModalLabel"><i class="fa fa-share-alt"></i> Share</h4>
+				  </div>
+				  <div class="modal-body">
+					<p><a title="Facebook" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></a> <a title="Twitter" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></a> <a title="Google+" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-google-plus fa-stack-1x"></i></span></a> <a title="Linkedin" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-linkedin fa-stack-1x"></i></span></a> <a title="Reddit" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x"></i></span></a> <a title="WordPress" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-wordpress fa-stack-1x"></i></span></a> <a title="Digg" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-digg fa-stack-1x"></i></span></a>  <a title="Stumbleupon" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-stumbleupon fa-stack-1x"></i></span></a><a title="E-mail" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x"></i></span></a>  <a title="Print" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-print fa-stack-1x"></i></span></a></p>
+					
+							<!--<h2><i class="fa fa-envelope"></i> Newsletter</h2>
+							<p>Subscribe to our weekly Newsletter and stay tuned.</p>
+							<form action="" method="post">
+								<div class="input-group">
+								  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+								  <input class="form-control" placeholder="your@email.com" type="email">
+								</div>
+								<br>
+								<button type="submit" value="sub" name="sub" class="btn btn-primary"><i class="fa fa-share"></i> Subscribe Now!</button>
+							</form>-->
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<!--End of share Modal -->
+			
+		<div class="clear"></div>
+	
+		<div class="row mainBody instaFade">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+						<div class="input-group typeahead-wrapper">
+						  <input type="text" class="form-control" placeholder="Search any questions" id="search">
+						  <span style="cursor: pointer;" class="input-group-addon"><i class="glyphicon glyphicon-search color-blue"></i></span>
+						</div><!-- /input-group -->
+				</div>
+			</div>
+			
+			<div class="row title" id="title">
+				<span><a href="#"> rf4tg4y65u75qwe4t4u675ujt5y6565h46g54gt6hjukeqfgthyjzferhyj6j shy64u dty64uy</a></span>
+			</div>
+			
+			<div>
+				<div style="background-color:#eee;" class="col-md-5">
+					<div>
+					<div class="row">
+						<ul class="nav nav-tabs nav-justified">
+						  <li><a href="#">Download as PDF</a></li>
+						  <li><a href="#">Related PastPapers</a></li>
+						  <li><a href="#">Popular Questions</a></li>
+						</ul>
+					</div>
+						<div class="clear"></div>
+						
+						<div style="margin-top: 8px;">
+							<div class="row" style="margin-bottom:5px; padding-bottom: 5px; border-bottom: 2px solid #dddddd;">
+								<div style="width: 13%;   float: left; text-align: center;">
+									<div style="border: 2px solid lime; width:auto; background-color: #fff;">
+										<div style=""><span style="color:#75845C; font-size: 1.5em; font-weight: bold;">1467</span></div>
+										<div style="background:#E0EAF1;">
+											<div><span style="font-size: 1.1em; font-weight: bold;">14</span></div>
+											<div><span style="font-size: 0.9em; font-weight: bold;">answers</span></div>
+										</div>
+									</div>
+								</div>
+				  
+								<div style="width: 85%; float: right; ">
+									<div>
+										<span>Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes</span>
+									</div>	
+								</div>
+							</div>
+							<div class="clear"></div>
+							<div class="row" style="margin-bottom:5px; padding-bottom: 5px; border-bottom: 2px solid #dddddd;">
+								<div style="width: 13%;   float: left; text-align: center;">
+									<div style="border: 2px solid lime; width:auto; background-color: #fff;">
+										<div style=""><span style="color:#75845C; font-size: 1.5em; font-weight: bold;">1467</span></div>
+										<div style="background:#E0EAF1;">
+											<div><span style="font-size: 1.1em; font-weight: bold;">14</span></div>
+											<div><span style="font-size: 0.9em; font-weight: bold;">answers</span></div>
+										</div>
+									</div>
+								</div>
+				  
+								<div style="width: 85%; float: right; ">
+									<div>
+										<span>Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes</span>
+									</div>	
+								</div>
+							</div>
+							<div class="clear"></div>
+							<div class="row" style="margin-bottom:5px; padding-bottom: 5px; border-bottom: 2px solid #dddddd;">
+								<div style="width: 13%;   float: left; text-align: center;">
+									<div style="border: 2px solid lime; width:auto; background-color: #fff;">
+										<div style=""><span style="color:#75845C; font-size: 1.5em; font-weight: bold;">1467</span></div>
+										<div style="background:#E0EAF1;">
+											<div><span style="font-size: 1.1em; font-weight: bold;">14</span></div>
+											<div><span style="font-size: 0.9em; font-weight: bold;">answers</span></div>
+										</div>
+									</div>
+								</div>
+				  
+								<div style="width: 85%; float: right; ">
+									<div>
+										<span>Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes</span>
+									</div>	
+								</div>
+							</div>
+							<div class="clear"></div>
+							<div class="row" style="margin-bottom:5px; padding-bottom: 5px; border-bottom: 2px solid #dddddd;">
+								<div style="width: 13%;   float: left; text-align: center;">
+									<div style="border: 2px solid lime; width:auto; background-color: #fff;">
+										<div style=""><span style="color:#75845C; font-size: 1.5em; font-weight: bold;">1467</span></div>
+										<div style="background:#E0EAF1;">
+											<div><span style="font-size: 1.1em; font-weight: bold;">14</span></div>
+											<div><span style="font-size: 0.9em; font-weight: bold;">answers</span></div>
+										</div>
+									</div>
+								</div>
+				  
+								<div style="width: 85%; float: right; ">
+									<div>
+										<span>Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes</span>
+									</div>	
+								</div>
+							</div>
+						
+						</div>	
+					</div>
+				</div>
+				
+					<div class="questionAnswerBlock col-md-7">
+						<div id="questionAnswer">
+						
+							
+							<div style="margin-top: 5px;">
+								<div id="likeAndDislike">
+									<ul class="list-unstyled"><br/>
+										<li><span style="cursor: pointer;"><i id="like"  data-toggle="tooltip" data-placement="right" data-original-title="Like or Vote for this question" class="glyphicon glyphicon-thumbs-up color-blue"></i></span></li>
+										<li><span style="font-weight: bold;">256</span></li>
+										<li><span style="cursor: pointer;"><i id="dislike"  data-toggle="tooltip" data-placement="right" data-original-title="Dislike or Downvote this question" class="glyphicon glyphicon-thumbs-down color-blue"></i></span></li><br/>
+										<li><span style="cursor: pointer;"><i id="share" title="Share this content" data-placement="right" data-toggle="modal" data-target="#myModal"  class="fa fa-share fa-lg"></i></span></li>
+									</ul>	
+								</div>
+								<div id="question">
+									<ul class="list-unstyled">
+										  <li><span id="questionBody">The example companies, organizations, products, domain names, email addresses, logos, people, places, and events depicted herein are fictitious. No association with any real company, organization, product, domain name, email address, logo, person, place, or event is intended or should be inferred.  This book expresses the author’s views and opinions.</span></li>
+										  <li style="margin-top: 15px;">
+											  <ul class="list-unstyled">
+												  <li style="width: 68%; float: left;">
+													  <ul class="list-unstyled">
+															<li><span class="tags"><a href="#" class="">cate</a></span></li>
+															<li><span class="tags"><a href="#" class="">categ</a></span></li>
+															<li><span class="tags"><a href="#" class="">categy</a></span></li>
+															<li><span class="tags"><a href="#" class="">category</a></span></li>
+															<li><span class="tags"><a href="#" class="">cay</a></span></li>
+													   </ul>
+												  </li>
+												  <li style="width: 30%; float: right;">
+														<ul class="list-unstyled">
+															<!--<li style="float: center;"><span id="headshot"><img src="headshot.jpg" alt="Mcabue" ></span></li><li class="clear"></li>-->
+															<li><span>Asked by : <a href="#" class="">[ username ]</a></span></li>
+															<li><span>Date : <a href="#" class="">[ date ]</a></span></li>
+														</ul>
+												  </li>
+											  </ul>
+										  </li>
+										  <li class="clear"></li>
+										  <li>
+											<div style="margin-left: 20px" id="questionComment">
+												<ul class="comment list-unstyled">
+												  <li><span><i class="glyphicon glyphicon-comment color-blue"></i> &nbsp; This is very constructive actually :-) &nbsp; <i class="glyphicon glyphicon-hand-right color-blue"></i> <a href="#" class="">[ username ]</a> &nbsp; <i class="glyphicon glyphicon-arrow-right color-blue"></i> <a href="#" class="">[ date ]</a> </span></li>
+												  <li><span><i class="glyphicon glyphicon-comment color-blue"></i> &nbsp; This is very constructive actually :-) &nbsp; <i class="glyphicon glyphicon-hand-right color-blue"></i> <a href="#" class="">[ username ]</a> &nbsp; <i class="glyphicon glyphicon-arrow-right color-blue"></i> <a href="#" class="">[ date ]</a> </span></li>
+												  <li><span><i class="glyphicon glyphicon-comment color-blue"></i> &nbsp; This is very constructive actually :-) &nbsp; <i class="glyphicon glyphicon-hand-right color-blue"></i> <a href="#" class="">[ username ]</a> &nbsp; <i class="glyphicon glyphicon-arrow-right color-blue"></i> <a href="#" class="">[ date ]</a> </span></li>
+												  <li>
+													  <form class="add-comment" data-bind="visible: $parent.signedIn, submit: addComment">
+														<div class="row">
+															<div class="col-md-9">
+																<input type="text" class="form-control" name="comment" placeholder="Add a comment" />
+															</div>
+															<div class="col-md-3">
+																<button class="btn btn-default" type="submit">Add Comment</button>
+																</div>
+															</div>
+														</form>
+													</li>
+												  
+												</ul>
+											</div>
+										  </li>
+									</ul>
+								</div>
+							</div>
+							
+								<div class="clear"></div>
+								
+							<div >
+							<span class="xAnswers">5 Answers</span>
+							<div style="padding-top:5px; border-top:4px solid #AAA;"></div>
+								<div id="likeAndDislike">
+									<ul class="list-unstyled"><br/>
+										<li><span style="cursor: pointer;"><i id="like"  data-toggle="tooltip" data-placement="right" data-original-title="Like or Vote for this Answer" class="glyphicon glyphicon-thumbs-up color-blue"></i></span></li>
+										<li><span style="font-weight: bold;">256</span></li>
+										<li><span style="cursor: pointer;"><i id="dislike"  data-toggle="tooltip" data-placement="right" data-original-title="Dislike or Downvote this Answer" class="glyphicon glyphicon-thumbs-down color-blue"></i></span></li>
+									</ul>	
+								</div>
+								<div id="answer">
+									
+									<ul class="list-unstyled">
+										  <li><span id="answerBody">The example companies, organizations, products, domain names, email addresses, logos, people, places, and events depicted herein are fictitious. No association with any real company, organization, product, domain name, email address, logo, person, place, or event is intended or should be inferred.  This book expresses the author’s views and opinions.</span></li>
+										  <li style="">
+											  <ul class="list-unstyled">
+												  <li style="width: 50%; float: right;">
+														<ul class="list-unstyled">
+															<!--<li style="float: center;"><span id="headshot"><img src="headshot.jpg" alt="Mcabue" ></span></li><li class="clear"></li>-->
+															<li><span>Answerd by : <a href="#" class="">[ username ]</a></span></li>
+															<li><span>Date : <a href="#" class="">[ date ]</a></span></li>
+														</ul>
+												  </li>
+											  </ul>
+										  </li>
+										  <li class="clear"></li>
+										  <li>
+											<div style="margin-left: 20px" id="questionComment">
+												<ul class="comment list-unstyled">
+												  <li><span><i class="glyphicon glyphicon-comment color-blue"></i> &nbsp; This is very constructive actually :-) &nbsp; <i class="glyphicon glyphicon-hand-right color-blue"></i> <a href="#" class="">[ username ]</a> &nbsp; <i class="glyphicon glyphicon-arrow-right color-blue"></i> <a href="#" class="">[ date ]</a> </span></li>
+												  <li><span><i class="glyphicon glyphicon-comment color-blue"></i> &nbsp; This is very constructive actually :-) &nbsp; <i class="glyphicon glyphicon-hand-right color-blue"></i> <a href="#" class="">[ username ]</a> &nbsp; <i class="glyphicon glyphicon-arrow-right color-blue"></i> <a href="#" class="">[ date ]</a> </span></li>
+												  <li><span><i class="glyphicon glyphicon-comment color-blue"></i> &nbsp; This is very constructive actually :-) &nbsp; <i class="glyphicon glyphicon-hand-right color-blue"></i> <a href="#" class="">[ username ]</a> &nbsp; <i class="glyphicon glyphicon-arrow-right color-blue"></i> <a href="#" class="">[ date ]</a> </span></li>
+												  <li>
+													  <form class="add-comment" data-bind="visible: $parent.signedIn, submit: addComment">
+														<div class="row">
+															<div class="col-md-9">
+																<input type="text" class="form-control" name="comment" placeholder="Add a comment" />
+															</div>
+															<div class="col-md-3">
+																<button class="btn btn-default" type="submit">Add Comment</button>
+																</div>
+															</div>
+														</form>
+													</li>
+												  
+												</ul>
+											</div>
+										  </li>
+									</ul>
+								</div>
+								</div>
+								
+								<div class="clear"></div>
+								
+							
+									
+									
+								<div id="demo" class="new-post pad-bottom pad-top collapse in">
+									<form data-bind="submit: addAnswer">
+										<div class="form-group pad-bottom">
+											<label for="message">Write your anwer here...</label>
+											<textarea class="form-control msgTextArea" name="newmessage" id="message" data-bind="jqAutoresize: {}"></textarea>
+										</div>
+										<button type="submit" id="msgTextAreaSubmit" class="btn btn-default">Submit</button>
+									</form>
+								</div>
+								
+							
+						</div>
+					</div>
+			</div>
+						
+		</div>
+		
+		<div class="quickFade" id="footer">
+			<h2>Place sticky footer content here.</h2>
+		</div>
+		
+		
+	</body>
+	<script type='text/javascript' src="Other/jquery.js"></script>
+	<script type='text/javascript' src="Other/bootstrap.js"></script>
+	<script type='text/javascript' src="Other/straight.js"></script>
+	<script type='text/javascript' src="Other/pace.js"></script>
+	<script type='text/javascript' src="Other/bootstrapValidator.js"></script>
+	<script type='text/javascript' src="Other/myValidate.js"></script>
+	<script type='text/javascript' src="Other/typeahead/typeahead.bundle.js"></script>
+	<script type="text/javascript">
+		var states = new Bloodhound({
+        datumTokenizer: function(d) { 
+          return Bloodhound.tokenizers.whitespace(d.val); 
+        },
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        local: [
+          { val: 'Alabama' },
+          { val: 'Alaska' },
+          { val: 'Arizona' },
+          { val: 'Arkansas' },
+          { val: 'California' },
+          { val: 'Colorado' },
+          { val: 'Connecticut' },
+          { val: 'Delaware' },
+          { val: 'Florida' },
+          { val: 'Georgia' },
+          { val: 'Hawaii' },
+          { val: 'Idaho' },
+          { val: 'Illinois' },
+          { val: 'Indiana' },
+          { val: 'Iowa' },
+          { val: 'Kansas' },
+          { val: 'Kentucky' },
+          { val: 'Louisiana' },
+          { val: 'Maine' },
+          { val: 'Maryland' },
+          { val: 'Massachusetts' },
+          { val: 'Michigan' },
+          { val: 'Minnesota' },
+          { val: 'Mississippi' },
+          { val: 'Missouri' },
+          { val: 'Montana' },
+          { val: 'Nebraska' },
+          { val: 'Nevada' },
+          { val: 'New Hampshire' },
+          { val: 'New Jersey' },
+          { val: 'New Mexico' },
+          { val: 'New York' },
+          { val: 'North Carolina' },
+          { val: 'North Dakota' },
+          { val: 'Ohio' },
+          { val: 'Oklahoma' },
+          { val: 'Oregon' },
+          { val: 'Pennsylvania' },
+          { val: 'Rhode Island' },
+          { val: 'South Carolina' },
+          { val: 'South Dakota' },
+          { val: 'Tennessee' },
+          { val: 'Texas' },
+          { val: 'Utah' },
+          { val: 'Vermont' },
+          { val: 'Virginia' },
+          { val: 'Washington' },
+          { val: 'West Virginia' },
+          { val: 'Wisconsin' },
+          { val: 'Wyoming' }
+        ]
+      });
+
+      states.initialize();
+
+      $('#search').typeahead({
+        highlight: true
+      },
+      {
+        displayKey: 'val',
+        source: states.ttAdapter()
+      });
+	</script>
+	<script>
+		$(function(){
+			$('#like, #dislike, #share').tooltip();
+		});
+	</script>
+	
+</html>

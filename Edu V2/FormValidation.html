@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="" content=""/>
+		<meta charset="UTF-8"/> 
+		<link type="text/css" rel="stylesheet" href="Other/font-awesome-4.2.0/css/font-awesome.min.css">
+		<link type="text/css" rel="stylesheet" href="Other/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="Other/formValidation/css/bootstrapValidator.css">
+		<link type="text/css" rel="stylesheet" href="Other/select2-3.5.2/select2.css">
+		<link type="text/css" rel="stylesheet" href="Other/Datepicker/bootstrap-datetimepicker.css"/>
+		<style type="text/css">
+			.select2-container .select2-choice {
+				height: 34px; 
+				font-size: 14px; 
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="container" style="width: 500px;">
+		
+							<div class="well">
+							  <div id="from-datepicker" class="input-append date">
+								<input data-format="dd/MM/yyyy hh:mm:ss" type="text">
+								<span class="add-on">
+								  <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+								  </i>
+								</span>
+							  </div>
+							</div>
+
+							<div class="well">
+							  <div id="to-datepicker" class="input-append date">
+								<input data-format="dd/MM/yyyy hh:mm:ss" type="text">
+								<span class="add-on">
+								  <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+								  </i>
+								</span>
+							  </div>
+							</div>
+		
+							<div class="form-group">
+                                <div class="input-group date" id="datetimepicker2">
+                                    <input value="17.01.2015 20:03" class="form-control" type="text">
+                                    <span class="input-group-addon"><span class="glyphicon-calendar glyphicon"></span>
+                                    </span>
+                                </div>
+                            </div>
+
+			<form style="" id="FormValidation" class="navbar-form form" role="form">
+				<div class="form-group">
+					<div class="input-group">
+						<span style="width:200px;" class="input-group-addon">SurName</span>
+						<input style="width: 300px;" placeholder="first name" class="form-control" name="surname">
+					</div>
+				</div>
+																
+				<div class="form-group">
+					<div class="input-group">
+						<span style="width:200px;" class="input-group-addon">First Name</span>
+						<input style="width: 300px;" placeholder="first name" class="form-control" name="firstname">
+					</div>
+				</div>
+																
+				<div class="form-group">
+					<div class="input-group">
+						<span style="width:200px;" class="input-group-addon">Last Name</span>
+						<input style="width: 300px;" placeholder="last name" class="form-control" name="lastname">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="input-group" id="datetimepicker1">
+						<span style="width:200px;" class="input-group-addon">Birth Date</span>
+						<input value="" style="width: 261px;" placeholder="last name" class="form-control" name="bdate">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+					</div>
+				</div>
+				
+																
+				<div class="form-group">
+					<div class="input-group">
+						<span style="width:200px;" class="input-group-addon">Reg. Number</span>
+						<input style="width: 300px;" placeholder="last name" class="form-control" name="regnumber">
+					</div>
+				</div>
+																
+				<div class="form-group">
+					<div class="input-group">
+						<span style="width:200px;" class="input-group-addon">ID Number</span>
+						<input style="width: 300px;" placeholder="National ID" class="form-control" name="idnumber">
+					</div>
+				</div>
+																
+				<div class="form-group">
+					<div class="input-group">
+						<span style="width:200px;" class="input-group-addon">Stream</span>
+						<input style="width: 300px;" placeholder="last name" class="form-control" name="stream">
+					</div>
+				</div>
+																
+				<div class="form-group">
+					<div class="input-group">
+						<span style="width:200px;" class="input-group-addon">Faculty</span>
+							<select data-placeholder='Choose Faculty' id="facultyid" style="width: 300px;" name="faculty" class="">
+								<option></option>
+								<option value="AZ">Arizona</option>
+								<option value="CO">Colorado</option>
+								<option value="ID">Idaho</option>
+								<option value="MT">Montana</option>
+								<option value="NE">Nebraska</option>
+								<option value="NM">New Mexico</option>
+								<option value="ND">North Dakota</option>
+								<option value="UT">Utah</option>
+								<option value="WY">Wyoming</option>
+							</select>
+					</div>
+				</div>
+																
+				<div class="form-group">
+					<div class="input-group">
+						<span style="width:200px;" class="input-group-addon">Course</span>
+						<input style="width: 300px;" placeholder="Course" class="form-control" name="course">
+					</div>
+				</div>
+																
+				<div class="form-group">
+					<div class="input-group">
+						<span style="width:200px;" class="input-group-addon">Email</span>
+						<input style="width: 300px;" ffpdm="sllsk9tlqkgb19q0h93te" id="emailInput" placeholder="email address" class="form-control" type="email" name="email">
+					</div>
+				</div>
+																
+																
+																
+				<div class="form-group">
+					<div class="input-group">
+						<span style="width:200px;" class="input-group-addon">Password</span>
+						<input style="width: 300px;" ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="password" class="form-control" type="password" name="password">
+					</div>
+				</div>
+																
+				<div class="form-group">
+					<div class="input-group">
+						<span style="width:200px;" class="input-group-addon">Confirm Password</span>
+						<input style="width:300px;" ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="confirm password" class="form-control" type="password" name="confirmpassword">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<button  type="submit" class="btn btn-success form-control">Register</button>
+				</div>											
+			</form>
+		</div>
+	</body>
+	<script type='text/javascript' src="Other/jquery.js"></script>
+	<script type='text/javascript' src="Other/bootstrap.js"></script>
+	<script type='text/javascript' src="Other/formValidation/js/bootstrapValidator.js"></script>
+	<script type='text/javascript' src="Other/select2-3.5.2/select2.js"></script>
+	<script type='text/javascript' src="Other/Datepicker/moment.js"></script>
+	<script type="text/javascript" src="Other/Datepicker/bootstrap-datetimepicker.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#FormValidation')			
+			.find('[name="faculty"]')
+				.select2({
+					allowClear: true
+				})
+				// Revalidate the color when it is changed
+				.change(function(e) {
+					//alert("why?");
+					$('#FormValidation').bootstrapValidator('revalidateField', "faculty");
+					
+				})
+				.end()
+
+			.bootstrapValidator({
+				excluded: ':disabled',
+				message: 'This value is not valid',
+		//        live: 'disabled',
+				icon: {
+					valid: 'glyphicon glyphicon-ok',
+					invalid: 'glyphicon glyphicon-remove',
+					validating: 'glyphicon glyphicon-refresh'
+				},
+				fields: {
+				surname: {
+                    message: 'The username is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The username is required and can\'t be empty'
+                        },
+                        stringLength: {
+                            max: 30,
+                            message: 'The username must be more than 6 and less than 30 characters long'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: 'The username can only consist of alphabetical, number, dot and underscore'
+                        }
+                    }
+                },
+                username: {
+                    message: 'The username is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The username is required and can\'t be empty'
+                        },
+                        stringLength: {
+                            max: 30,
+                            message: 'The username must be more than 6 and less than 30 characters long'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: 'The username can only consist of alphabetical, number, dot and underscore'
+                        }
+                    }
+                },
+                firstname: {
+                    message: 'The first name is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The first name is required and can\'t be empty'
+                        },
+                        stringLength: {
+                            max: 30,
+                            message: 'The first name can\'t be more than 30 characters long'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: 'The username can only consist of alphabetical, number, dot and underscore'
+                        }
+                    }
+                },
+                lastname: {
+                    message: 'The last name is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The last name is required and can\'t be empty'
+                        },
+                        stringLength: {
+                            max: 30,
+                            message: 'The last name can\'t be more than 30 characters long'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: 'The username can only consist of alphabetical, number, dot and underscore'
+                        }
+                    }
+                },
+				regnumber: {
+                    message: 'The last name is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The last name is required and can\'t be empty'
+                        },
+                        stringLength: {
+                            max: 30,
+                            message: 'The last name can\'t be more than 30 characters long'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: 'The username can only consist of alphabetical, number, dot and underscore'
+                        }
+                    }
+                },
+				idnumber: {
+                    message: 'The last name is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The last name is required and can\'t be empty'
+                        },
+                        stringLength: {
+                            max: 30,
+                            message: 'The last name can\'t be more than 30 characters long'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: 'The username can only consist of alphabetical, number, dot and underscore'
+                        }
+                    }
+                },
+				stream: {
+                    message: 'The last name is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The last name is required and can\'t be empty'
+                        },
+                        stringLength: {
+                            max: 30,
+                            message: 'The last name can\'t be more than 30 characters long'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: 'The username can only consist of alphabetical, number, dot and underscore'
+                        }
+                    }
+                },
+				faculty: {
+						validators: {
+							callback: {
+								message: 'You must choose a Faculty',
+								callback: function(value, validator, $field) {
+									// Get the selected options
+									//var option = validator.getFieldElements('facultyid').val();
+									
+									if ($('[name="faculty"]').val() == ""){
+										return false;
+									}
+									else{
+										return true;
+									}
+								}
+							}
+						}
+					},
+				course: {
+                    message: 'The last name is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The last name is required and can\'t be empty'
+                        },
+                        stringLength: {
+                            max: 30,
+                            message: 'The last name can\'t be more than 30 characters long'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: 'The username can only consist of alphabetical, number, dot and underscore'
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The email address is required and can\'t be empty'
+                        },
+                        emailAddress: {
+                            message: 'The input is not a valid email address'
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The password is required and can\'t be empty'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 30,
+                            message: 'The password must be more than 6 and less than 30 characters long'
+                        }
+                    }
+                },
+                confirmpassword: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please confirm your password'
+                        },
+                        identical: {
+                            field: 'password',
+                            message: 'The password misMatch'
+                        }
+                    }
+                },
+				bdate: {
+					validators: {
+						date: {
+							format: 'MM/DD/YYYY h:m A',
+							message: 'The format is dd/mm/yyyy'
+						},
+						notEmpty: {
+							message: 'The field can not be empty'
+						}
+					}
+				}
+            }
+			});
+			
+			 $('#datetimepicker1').on('dp.change dp.show', function(e) {
+				$('#FormValidation').formValidation('revalidateField', 'bdate');
+			});
+			
+		});
+	</script>
+	<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1, #datetimepicker2').datetimepicker({
+                    //language: 'ru'
+                });
+            });
+			
+			
+				
+			$(function() {
+				var today = new Date();
+				
+				$('#from-datepicker').datetimepicker({
+				  language: 'pt-BR',
+				  startDate: today
+				});
+				
+				 $('#to-datepicker').datetimepicker({
+				  language: 'pt-BR'
+				});
+				
+			});
+        </script>
+</html>
