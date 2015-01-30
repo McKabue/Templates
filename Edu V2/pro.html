@@ -280,6 +280,22 @@
 						  <li class="">Vestibulum at eros</li>
 						</ol>
 						<div class="" style="padding-left:20px; padding-top:10px;"><span style="padding-right:10px; font-style:italic; font-size:18px; font-weight:bold; "> Do you Agree to bound by these Rules?</span> <button type="submit" style="" class="btn btn-success">Yes</button><button type="submit" style="" class="btn btn-danger">No</button></div>
+						
+						<br />
+						<div class="form-group">
+							<label for="fun" class="col-sm-4 col-md-4 control-label text-right">Is it fun ?</label>
+							<div class="col-sm-7 col-md-7">
+								<div class="input-group">
+									<div id="radioBtn" class="btn-group">
+										<a class="btn btn-primary btn-sm active" data-toggle="fun" data-title="Y">YES</a>
+										<a class="btn btn-primary btn-sm notActive" data-toggle="fun" data-title="X">I don't know</a>
+										<a class="btn btn-primary btn-sm notActive" data-toggle="fun" data-title="N">NO</a>
+									</div>
+									<input type="hidden" name="fun" id="fun">
+								</div>
+							</div>
+						</div>
+						
 					  </div>
 					</div>
 				  </div>
@@ -772,5 +788,15 @@
 
 	  });
     </script>
+	<script>
+		$('#radioBtn a').on('click', function(){
+			var sel = $(this).data('title');
+			var tog = $(this).data('toggle');
+			$('#'+tog).prop('value', sel);
+			
+			$('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
+			$('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
+		})
+	</script>
 
 </html>

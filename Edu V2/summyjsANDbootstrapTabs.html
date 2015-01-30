@@ -5,7 +5,10 @@
 		<meta name="" content=""/>
 		<meta charset="UTF-8"/> 
 		<link type="text/css" rel="stylesheet" href="Other/font-awesome-4.2.0/css/font-awesome.min.css">
+		
 		<link type="text/css" rel="stylesheet" href="Other/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="Other\bootstrap-select\css\bootstrap-select.min.css">
+		
 		<style>
 			html {
 			  position: relative;
@@ -151,6 +154,13 @@
 			.tabs-right > .nav-tabs .active > a:focus {
 			  border-color: #ddd #ddd #ddd transparent;
 			  *border-left-color: #ffffff;
+			}
+			
+			
+			
+			
+			.progress-bar.animate {
+			   width: 100%;
 			}
 		</style>
 	</head>
@@ -502,9 +512,40 @@
 			   <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
 			   <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
 			   <div class="tab-pane fade" id="ejb"> 
-				  <p>Enterprise Java Beans (EJB) is a development architecture           for building highly scalable and robust enterprise level     
-					 applications to be deployed on J2EE compliant           Application Server such as JBOSS, Web Logic etc. 
-				  </p> 
+				   
+						<select class="selectpicker" data-width="100px">
+						<option>Mustard</option>
+						<option>Ketchup</option>
+						<option>Relish</option>
+						</select>
+						
+						<select id="basic" class="selectpicker show-tick form-control" data-live-search="true">
+						  <option>cow</option>
+						  <option>bull</option>
+						  <option class="get-class" disabled>ox</option>
+						  <optgroup label="test" data-subtext="another test">
+							<option>ASD</option>
+							<option selected>Bla</option>
+							<option>Ble</option>
+						  </optgroup>
+						</select>
+					
+					
+					<div class="clear">
+						<button id="load">Load It!</button>
+						<div class="modal js-loading-bar">
+						 <div class="modal-dialog">
+						   <div class="modal-content">
+							 <div class="modal-body">
+							   <div class="progress progress-popup">
+								<div class="progress-bar"></div>
+							   </div>
+							 </div>
+						   </div>
+						 </div>
+						</div>
+					</div>
+				  
 			   </div> 
 			</div> 
 		</div>
@@ -513,6 +554,7 @@
 	<script type='text/javascript' src="Other/jquery.js"></script>
 	<script type='text/javascript' src="Other/bootstrap.js"></script>
 	<script type="text/javascript" src="Other/summyjs/min/sammy-0.7.6.min.js"></script>
+	<script type="text/javascript" src="Other\bootstrap-select\js\bootstrap-select.min.js"></script>
 	<script type="text/javascript">
 
         //Update the URL with the current tabs hash
@@ -582,4 +624,44 @@
 	  $(this).addClass('highlight');
 	})
 	</script>
+	
+	<script>
+          $('.selectpicker').selectpicker({
+			//style: 'btn-info',
+			});
+			
+			$(document).ready(function () {
+			  var mySelect = $('#first-disabled2');
+
+			  $('#special').on('click', function () {
+				mySelect.find('option:selected').attr('disabled', 'disabled');
+				mySelect.selectpicker('refresh');
+			  });
+
+			  var $basic2 = $('#basic2').selectpicker({
+				liveSearch: true,
+				maxOptions: 1
+			  });
+			});
+  </script>
+  <script>
+  // Setup
+	this.$('.js-loading-bar').modal({
+	  backdrop: 'static',
+	  show: false
+	});
+
+	$('#load').click(function() {
+	  var $modal = $('.js-loading-bar'),
+		  $bar = $modal.find('.progress-bar');
+	  
+	  $modal.modal('show');
+	  $bar.addClass('animate');
+
+	  setTimeout(function() {
+		$bar.removeClass('animate');
+		$modal.modal('hide');
+	  }, 1500);
+	});
+  </script>
 </html>

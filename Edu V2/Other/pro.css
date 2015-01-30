@@ -128,3 +128,8 @@ body {
 .select2-container .select2-choice {
 	height: 30px; 
 }
+
+#radioBtn .notActive{
+    color: #3276b1;
+    background-color: #fff;
+}
