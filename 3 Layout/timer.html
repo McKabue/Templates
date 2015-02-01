@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div style="font-size: 3em;">
+			<span >Time by JavaScript</span><br/>
+			<span style="font-weight: bold;" id="hours"></span>
+			<span style="font-weight: bold;">:</span>
+			<span style="font-weight: bold;" id="minutes"></span>
+			<span style="font-weight: bold;">:</span>
+			<span style="font-weight: bold;" id="seconds"></span>
+		</div><br/>
+		
+		<span style="font-size: 3em;">Shapes by CSS</span>
+		<div style="width:100px; height: 100px; background-color:lime; font-size: 2em;">square</div><br/>
+		<div style="width:200px; height: 100px; background-color:lime; font-size: 2em;">rectangle</div><br/>
+		<div style="width:100px; height: 100px; background-color:lime; border-radius:50px; font-size: 2em;">&nbsp;&nbsp;circle</div><br/>
+		<div style="width:100px; height: 200px; background-color:lime; border-radius:50px/100px; font-size: 2em;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oval</div><br/>
+		<div style="width:0px; height: 0px; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 50px solid lime; font-size: 2em;">triangle</div><br/>
+	</body>
+	<script>
+		var sec = 0;
+		function pad(val){
+			return val > 9 ? val : "0" + val;
+		}
+		setInterval(function(){
+		document.getElementById("seconds").innerHTML=pad(++sec%60);
+		document.getElementById("minutes").innerHTML=pad(parseInt(sec/60, 10));
+		document.getElementById("hours").innerHTML=pad(parseInt(sec/3600, 10));
+		}, 1000)
+	</script>
+</html>

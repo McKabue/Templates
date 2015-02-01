@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="" content=""/>
+		<meta charset="UTF-8"/> 
+		<link type="text/css" rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
+		<link type="text/css" rel="stylesheet" href="bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="bootstrapValidator.css">
+		<link type="text/css" rel="stylesheet" href="UserInteraction.css">
+		
+		
+		<!--[if lt IE 9]>
+		<script src="html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<!-- Fixed navbar -->
+			<div class="quickFade navbar navbar-inverse navbar-fixed-top" role="navigation">
+			  <div class="container">
+			  
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="#">Project name</a>
+				</div>
+				
+				<div class="navbar-collapse collapse">
+					  <ul class="nav navbar-nav">
+						  <li><a href="#">Link 1</a></li>
+						  
+						  <li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Link 2 <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Action</a></li>
+							  <li><a href="#">Another action</a></li>
+							  <li class="divider"></li>
+							  <li><a href="#">Something else here</a></li>
+							  <li><a href="#">And something else here</a></li>
+							 </ul>
+						  </li>
+					   </ul>
+					   <ul class="nav navbar-nav navbar-right">
+							<li><a href="#loginModal" role="button" data-toggle="modal">Link 3</a></li>
+							<li><a href="#signupModal" role="button" data-toggle="modal">SignUp</a></li>
+						</ul>
+				
+				</div><!--/.nav-collapse -->
+			  </div>
+			</div>
+			<!-- END Fixed navbar -->
+			<!--sign up modal-->
+			<div id="signupModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+				 <div class="modal-dialog">
+					<div id="headshot" class="modal-content">
+						<div class="modal-header">
+							<h2 class="text-center"><img src="headshot.png" ><br>SignUp</h2>
+						</div>
+						<div class="modal-body">
+							<form id="signupForm" class="navbar-form form" role="form" data-bind="submit: SignUp">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                            <input placeholder="user name" class="form-control" name="username" id="username">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                            <input placeholder="first name" class="form-control" name="firstname">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                            <input placeholder="last name" class="form-control" name="lastname">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                            <!--EMAIL ADDRESS-->
+                                            <input ffpdm="sllsk9tlqkgb19q0h93te" id="emailInput" placeholder="email address" class="form-control" type="email" name="email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+                                            <!--PASSWORD-->
+                                            <input ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="password" class="form-control" type="password" name="password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+                                            <!--PASSWORD-->
+                                            <input ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="confirm password" class="form-control" type="password" name="confirmpassword">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!--BUTTON-->
+                                        <button type="submit" class="btn btn-success form-control">Sign Up</button>
+                                    </div>
+									
+                            </form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--END sign up modal-->
+			<!--share Modal -->
+			<div class="modal fade" id="share" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div style="width: 400px;" class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="myModalLabel"><i class="fa fa-share-alt"></i> Share</h4>
+				  </div>
+				  <div class="modal-body">
+					<p><a title="Facebook" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></a> <a title="Twitter" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></a> <a title="Google+" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-google-plus fa-stack-1x"></i></span></a> <a title="Linkedin" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-linkedin fa-stack-1x"></i></span></a> <a title="Reddit" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x"></i></span></a> <a title="WordPress" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-wordpress fa-stack-1x"></i></span></a> <a title="Digg" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-digg fa-stack-1x"></i></span></a>  <a title="Stumbleupon" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-stumbleupon fa-stack-1x"></i></span></a><a title="E-mail" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x"></i></span></a>  <a title="Print" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-print fa-stack-1x"></i></span></a></p>
+					
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<!--End of share Modal -->
+	
+		
+			<div style="margin-top: 55px;" class="row">
+				<div class="col-md-6 col-md-offset-3">
+						<div class="row">
+							<p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+							<p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+							<p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+							<p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+							<p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+						</div>
+						<div class="clear"></div>
+						<div>
+							<div class="clear"></div>
+							
+							<div class="row">
+								<dl id="COMMENTS" class="dl-horizontal"> </dl>
+							</div>
+							<span style="cursor: pointer;"><i id="share" title="Share this content" data-toggle="modal" data-target="#share"  class="fa fa-share fa-lg"></i></span>
+							<div class="clear"></div>		
+							<div id="" class="row">
+									<div id="Alert" class="alert alert-danger alert-dismissable"> <a id="hide" class="close"><strong>X</strong></a> <strong>Warning!</strong> You need to write something on the comment box! </div>
+									<div class="form-group" style="padding-bottom: 30px;">
+										<label for="message">Write your comment here...</label>
+										<textarea style = "min-height: 100px; max-height: 250px;" class="form-control commentTextArea hh" id="comment"></textarea>
+										<button data-bind="" id="gg" class="btn btn-default">Submit</button>
+									</div>
+									
+							</div>
+						</div>
+				</div>
+				
+			</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</body>
+	
+	<script type='text/javascript' src="jquery.js"></script>
+	<script type='text/javascript' src="bootstrap.js"></script>
+	
+	<script type='text/javascript' src="bootstrapValidator.js"></script>
+	<script type='text/javascript' src="UserInteractionValidate.js"></script>
+	<script type="text/javascript" src="jHtmlArea.js"></script>
+	<script type='text/javascript' src="jquery.autosize-min.js"></script>
+	<script>
+		$(document).ready(function () {
+		
+			$('#comment').focus();
+			
+			$("#gg").click(function () {
+				var n = $("#username").val();
+				var c = $("#comment").val();
+				if(!c == ''){
+					$("#Alert").hide();
+					$('#COMMENTS').append('<dt>' + n + '</dt>' + '<dd>' + c + '</dd>');
+					$("#comment").val('');
+					$('#comment').focus();
+					$('#comment').css("height", 100 + "px");
+				}
+				else{
+					$("#Alert").show();
+				}
+			 });
+			 
+			 $(function(){
+				$('#share').tooltip();
+			});
+			
+			
+			$(function(){
+				$('#comment').autosize();
+			});
+			
+			/*$(function(){
+				$("#signupModal").modal({
+					show: true,
+					backdrop:'static',
+					keyboard: false
+				});
+			});*/
+			
+			$(function(){
+				$("#Alert").hide();
+			});
+			
+			$("#hide").click(function () {
+				$("#Alert").hide();
+			});
+			
+			/*$(function(){
+				$('#comment').htmlarea();
+			});*/
+			
+		});
+	</script>
+	<script>
+		
+	</script>
+	<script>
+		
+	</script>
+</html>

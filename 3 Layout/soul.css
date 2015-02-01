@@ -1,0 +1,143 @@
+html, body {
+	margin:0;
+	padding:0;
+}
+
+html { 
+  background: url(bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Lato', helvetica, arial, sans-serif; font-size: 16px; color: #222;
+}
+
+.clear {clear: both;}
+
+#navigation {
+position: fixed;
+top: 0;
+width: 100%;
+color: #ffffff;
+height: 35px;
+text-align: center;
+padding-top: 5px;
+/* Adds shadow to the bottom of the bar */
+-webkit-box-shadow: 0px 0px 8px 0px #000000;
+-moz-box-shadow: 0px 0px 8px 0px #000000;
+box-shadow: 0px 0px 8px 0px #000000;
+/* Adds the transparent background */
+background-color: rgba(1, 1, 1, 0.8);
+color: rgba(1, 1, 1, 0.8);
+}
+
+#navigation a, #navigation2 a, #navigation3 a {
+font-size: 1.3em;
+padding-left: 15px;
+padding-right: 15px;
+color: white;
+text-decoration: none;
+}
+
+#navigation a:hover {
+color: grey;
+} 
+
+#navigation2 {
+	position: fixed;
+	top: 40px;
+	width: 42%;
+	margin-left: 28.3%;
+	color: #ffffff;
+	height: 35px;
+	text-align: center;
+	padding-top: 10px;
+/* Adds shadow to the bottom of the bar */
+	-webkit-box-shadow: 0px 0px 8px 0px #000000;
+	-moz-box-shadow: 0px 0px 8px 0px #000000;
+	box-shadow: 0px 0px 8px 0px #000000;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+/* Adds the transparent background */
+	background-color: rgba(1, 1, 1, 0.8);
+	color: rgba(1, 1, 1, 0.8);
+}
+
+#navigation3 {
+	position: fixed;
+	top: 95px;
+	width: 42%;
+	margin-left: 28.3%;
+	color: #ffffff;
+	height: 35px;
+	text-align: center;
+	padding-top: 10px;
+/* Adds shadow to the bottom of the bar */
+	-webkit-box-shadow: 0px 0px 8px 0px #000000;
+	-moz-box-shadow: 0px 0px 8px 0px #000000;
+	box-shadow: 0px 0px 8px 0px #000000;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+/* Adds the transparent background */
+	background-color: rgba(1, 1, 1, 0.8);
+	color: rgba(1, 1, 1, 0.8);
+}
+
+#body1 {
+	max-width: 1200px;
+	margin: 30px auto;
+	margin-top: 45px;
+}
+
+#body2 {
+	width: 73%;
+	float: left;
+}
+
+#body2 p{
+	margin: 10px;
+	
+}
+
+#top-margin{
+	margin-top: 65px;
+	
+}
+
+#body3 {
+	width: 26%;
+	float: right;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+#body3  p{
+	margin: 10px;
+}
+
+#left {
+	width: 34%;
+	float: left;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+#center {
+	margin-top: 40px;
+	width: 65%;
+	background: #f3f3f3;
+	float: right;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+#smallBox {
+	width: 100%;
+	background: #f3f3f3;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+#smallBox p{
+	margin: 10px;
+}

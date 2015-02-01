@@ -57,10 +57,20 @@
 		<!-- END Fixed navbar -->
 			
 		<div class="clear"></div>
+					
+						
+							
+							 <div class="modal" role="dialog" aria-hidden="true" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false">
+								   <div style="margin-top:300px;" class="modal-dialog"><h1>Processing...</h1> <div class="progress progress-striped "> <div class="progress-bar progress-bar-success animate" role="progressbar"></div> </div></div>
+							 </div>
+					
 	
 		<div style="padding-top: 40px;" class="row mainBody">
 			<div id="myTabContent" class="tab-content"> 
 			   <div class="tab-pane fade in active" id="book"> 
+			   
+							<button id="load">Load It!</button>
+			   
 							<form class="form-horizontal" role="form" style="background-color:#E0EAF1; padding:20px; border:4px solid #AAA;">
 								<div class="row form-group">
 									<div class="col-md-3">
@@ -772,5 +782,22 @@
 			});
 		});	
 </script>
+
+<script>
+	$('#pleaseWaitDialog').modal();
+
+	$('#load').click(function() {
+	  var $modal = $('#pleaseWaitDialog'),
+		  $bar = $modal.find('.progress-bar');
+	  
+	  $modal.modal('show');
+	  $bar.addClass('animate');
+
+	  setTimeout(function() {
+		$bar.removeClass('animate');
+		$modal.modal('hide');
+	  }, 1500);
+	});
+  </script>
 	
 </html>

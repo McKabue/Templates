@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head><style type="text/css">body { font-family: arial; font-size: 14px; }
+.liveExample { padding: 1em; background-color: #EEEEDD; border: 1px solid #CCC; max-width: 655px; }
+.liveExample input { font-family: Arial; }
+.liveExample b { font-weight: bold; }
+.liveExample p { margin-top: 0.9em; margin-bottom: 0.9em; }
+.liveExample select[multiple] { width: 100%; height: 8em; }
+.liveExample h2 { margin-top: 0.4em; }
+
+.renderTime { color: #777; font-style: italic; font-size: 0.8em; }
+
+li { list-style-type: disc; margin-left: 20px; }</style>
+
+
+<script type='text/javascript' src="knockout.js"></script>
+<title>HTML5, CSS3 and JavaScript demo</title>
+</head><body><div class="liveExample"> 
+   <p style="color:red">How do I make this list unique?</p>
+    <p>
+    <select data-bind="options: uniqueCountries, selectedOptions: selectedCountries" size="5" multiple="true" style="width:150px"><option value="UK">UK</option><option value="USA">USA</option><option value="Bangladesh">Bangladesh</option><option value="India">India</option></select>
+  </p>
+  <p style="color:red">And how do I filter the records below based on the selected items above? (multiple select)</p>
+   <table style="width:300px">
+     <thead>
+       <tr><th>Name</th>
+       <th>Location</th>
+     </tr></thead>
+    <tbody data-bind="foreach: filteredPeople">
+        <tr>
+          <td>
+                <span data-bind="text: name">Patel</span> 
+          </td>
+            <td>
+                <span data-bind="text: country">India</span> 
+          </td>
+        </tr>
+    
+        <tr>
+          <td>
+                <span data-bind="text: name">Sweatha</span> 
+          </td>
+            <td>
+                <span data-bind="text: country">India</span> 
+          </td>
+        </tr>
+    
+        <tr>
+          <td>
+                <span data-bind="text: name">Minto</span> 
+          </td>
+            <td>
+                <span data-bind="text: country">India</span> 
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<!-- Start your code here -->
+
+
+
+<!-- End your code here -->
+
+<script>// Define a "Person" class that tracks its own name and children, and has a method to add a new child
+var Person = function(name, country) {
+    this.name = name;
+    this.country = country;
+}
+
+// The view model is an abstract description of the state of the UI, but without any knowledge of the UI technology (HTML)
+var viewModel = {
+    people: ko.observableArray([
+        new Person("Annabelle", "UK"),
+        new Person("Bertie", "UK"),
+       new Person("Bertie", "USA"),
+        new Person("Ali", "Bangladesh"),
+        new Person("Patel", "India"),
+      new Person("Sweatha", "India"),
+       new Person("Minto", "India"),
+        ]),
+  selectedCountries: ko.observableArray()
+};
+
+viewModel.uniqueCountries = ko.computed(function() {
+      var people = viewModel.people(),
+          index = {},
+          uniqueCountries= [],
+          length = people.length,
+          i, country;
+  
+      for (i = 0; i < length; i++) {
+          country = people[i].country;      
+          if (!index[country]) {
+               index[country] = true;
+               uniqueCountries.push(country);
+          }
+      } 
+  
+      return uniqueCountries;
+});
+  
+viewModel.filteredPeople = ko.computed(function() {
+  var selected = viewModel.selectedCountries() || [],
+      index = {};
+  
+  //build an index, so we can avoid looping each time
+  ko.utils.arrayForEach(selected, function(country) {
+      index[country] = true;
+  });
+  
+  return ko.utils.arrayFilter(viewModel.people(), function(person) {
+      return index[person.country];
+  });
+});
+
+ko.applyBindings(viewModel);</script></body>
