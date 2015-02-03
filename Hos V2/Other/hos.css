@@ -64,8 +64,8 @@ input.largerCheckbox
 
 
 
-.modal-content{
-	background: #eee;
+.modal-header {
+	border-bottom: 0px;
 }
 
 .modal-dialog {

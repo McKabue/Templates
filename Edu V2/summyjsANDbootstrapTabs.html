@@ -191,6 +191,14 @@
 				<!-- ///////////////////////////////////////////////////////////////////////////////////// -->
 				<!-- ///////////////////////////////////////////////////////////////////////////////////// -->
 			   <div class="tab-pane fade in active" id="home"> 
+			   
+			   
+				    <div class="modal" role="dialog" aria-hidden="true" id="pleaseWaitDialog2" data-backdrop="static" data-keyboard="false">
+						<div style="margin-top:300px; width:500px;" class="modal-dialog">
+							<div class="progress progress-striped active"><div class="progress-bar progress-bar-success animate" style="width: 0%;"></div></div>
+						</div>
+					</div>
+			   
 				  <form id="" class="form-horizontal" role="form" style="background-color:#E0EAF1; padding:20px; border:4px solid #AAA;font-size:1.2em;">
 						<div class="panel panel-default">
 						  <!-- Default panel contents -->
@@ -663,5 +671,20 @@
 		$modal.modal('hide');
 	  }, 1500);
 	});
+  </script>
+  <script>
+	  var progress = setInterval(function () {
+		var $bar = $('.progress-bar');
+		$('#pleaseWaitDialog2').modal();
+
+		if ($bar.width() >= 500) {
+			clearInterval(progress);
+			$('#pleaseWaitDialog2').modal('hide');
+			//$('.progress').removeClass('animate');
+		} else {
+			$bar.width($bar.width() + 50);
+		}
+		//$bar.text($bar.width() / 10 + "%");
+	}, 1000);
   </script>
 </html>
