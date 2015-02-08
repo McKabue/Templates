@@ -309,35 +309,41 @@
 			   
 			   <div class="tab-pane fade" id="reschedule"> 
 					<form id="" class="form-horizontal" role="form" style="background-color:#E0EAF1; padding:20px; border:4px solid #AAA;">
+					
 						<div class="panel panel-default">
 						  <!-- Default panel contents -->
 						  <div class="panel-heading" style="font-size:1.5em;">Panel heading</div>
+						  <div class="panel-heading" style="font-size:1.5em;">
+							<input style="width:30%;" id="filter" type="text" class="form-control" placeholder="Type here...">
+							<span style="padding-left:5px;"> <button type="button" id="deleteAll" class="btn btn-danger">Delete All</button> <input id="checkAll" class="largerCheckbox pull-right" style="font-size:1.5em;" type="checkbox"> </span>
+						</div>
 
 						  <!-- Table 1 -->
 						  <table class="table table-striped table-condensed" style="border-collapse:collapse;">
 							<thead>
 							  <tr>
 								<th style="width:3%;">#</th>
-								<th style="width:28%;">First Name</th>
+								<th style="width:23%;">First Name</th>
 								<th style="width:28%;">Last Name</th>
 								<th style="width:28%;">Username</th>
-								<th style="width:13%;">Action</th>
+								<th style="width:18%;">Action</th>
 							  </tr>
 							</thead>
-							<tbody id="tableBody">
+							<tbody id="tableBody" class="searchable">
 							  <tr class="rowClass">
 								<td>1</td>
 								<td>Mark</td>
 								<td>Otto</td>
 								<td>@mdo</td>
 								<td><div class="btn-group">
-									  <button type="button" class="btn btn-default" data-toggle="collapse" data-target=".demo1">View</button>
+									  <button type="button" class="btn btn-default" data-toggle="collapse" data-target=".demo1">Show Details</button>
 									  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
 										<span class="caret"></span>
 										<span class="sr-only">Toggle Dropdown</span>
 									  </button>
-									  <ul class="dropdown-menu" role="menu" data-toggle="collapse" data-target=".demo1">
-										<li><a data-target=".edit" data-toggle="tab">Edit</a></li>
+									  <ul class="dropdown-menu buttonActiveClass" role="menu">
+										<li class="active"><a data-target=".details" data-toggle="tab" data-parent="#detailsTabContent">Details</a></li>
+										<li><a data-target=".edit" data-toggle="tab" data-parent="#detailsTabContent">Edit</a></li>
 										<li><a href="#">Delete</a></li>
 										<li><a href="#">Select</a></li>
 									  </ul>
@@ -348,31 +354,11 @@
 									<td colspan="5" class="hiddenRow">
 										<div class="collapse demo1" style=" padding:20px;">
 
-										<div id="myTabContent2" class="tab-content">
-											<div class="tab-pane fade in active" id="login">
-												<div style="width: 350px;">
-																<form style="" id="loginForm" class="navbar-form form" role="form" data-bind="submit: Login">
-																		<div class="form-group">
-																			<div class="input-group">
-																				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
-																				<!--EMAIL ADDRESS-->
-																				<input ffpdm="sllsk9tlqkgb19q0h93te" id="emailInput" placeholder="email address" class="form-control" type="email" name="email">
-																			</div>
-																		</div>
-																		<div class="form-group">
-																			<div class="input-group">
-																				<span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
-																				<!--PASSWORD-->
-																				<input ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="password" class="form-control" type="password" name="password">
-																			</div>
-																		</div><br/>
-																		<div class="form-group">
-																			<!--BUTTON-->
-																			<button type="submit" class="btn btn-success form-control">Login</button>
-																		</div>
-																		
-																</form>
-													</div>
+										<div id="detailsTabContent" class="tab-content">
+											<div class="tab-pane fade in active details">
+												<div style="">
+													<p>DETAILS GO HERE...</p>		
+												</div>
 											</div>
 									
 												<div class="tab-pane fade edit">
@@ -623,7 +609,7 @@
 										<span class="caret"></span>
 										<span class="sr-only">Toggle Dropdown</span>
 									  </button>
-									  <ul class="dropdown-menu" role="menu">
+									  <ul class="dropdown-menu buttonActiveClass" role="menu">
 										<li><a href="#">Edit</a></li>
 										<li><a href="#">Delete</a></li>
 										<li><a href="#">Select</a></li>
@@ -774,10 +760,12 @@
 				if ($(this).is(':checked')){
 					  $(this).parent().parent().addClass('highlighted');
 					  $(this).parent().parent().siblings().addClass('highlighted');
-					  //$(this).parent().parent('.collapse').on('show.bs.collapse', function () {	$('.collapse.in').collapse('hide'); });
+					  $('.collapse.in').collapse('hide');
+					  $(this).parent().parent().find('button').addClass('disabled');
 				} else if($(this).parent().parent().is('.highlighted')) {
 					 $(this).parent().parent().removeClass('highlighted');
 					 $(this).parent().parent().siblings().removeClass('highlighted');
+					 $(this).parent().parent().find('button').removeClass('disabled');
 				}
 			});
 		});	
@@ -799,5 +787,76 @@
 	  }, 800);
 	});
   </script>
+  <script>
+	$('.buttonActiveClass').on('click','li a',function(e){
+	   $('.buttonActiveClass').find('li.active').removeClass('active');
+	  $(this).addClass('active');
+	  if($(this).text() == "Select"){
+		$(this).parent().parent().parent().siblings().find('input[type=checkbox]').prop('checked', 'checked');
+		if ($(this).parent().parent().parent().siblings().find('input[type=checkbox]').is(':checked')){
+					  $(this).parent().parent().parent().parent().addClass('highlighted');
+					  $(this).parent().parent().parent().parent().siblings().addClass('highlighted');
+					  $('.collapse.in').collapse('hide');
+					  $(this).parent().parent().parent().find('button').addClass('disabled');
+				}
+	  }
+	  if($(this).text() == "Delete"){
+		var c = confirm('Are you sure to delete this Appointment?');
+		if(c){
+			$('.collapse.in').collapse('hide');
+			$(this).parents('tr').remove();
+		}
+	  }
+	  
+	})
+	</script>
+	
+	<script>
+		$('#filter').keyup(function () {
+
+            var rex = new RegExp($(this).val(), 'i');
+			$('.collapse.in').collapse('hide');
+            $('tbody input[type=checkbox]').parents('tr').hide();
+            $('tbody input[type=checkbox]').parents('tr').filter(function () {
+                return rex.test($(this).text());
+            }).show();
+
+        })
+	</script>
+	<script>
+	$('#checkAll').click(function(){
+		if ($(this).is(':checked')){
+			$('.collapse.in').collapse('hide');
+			$('tbody input[type=checkbox]').prop('checked', true);
+			$('tbody input[type=checkbox]').parents('td').addClass('highlighted');
+			$('tbody input[type=checkbox]').parents().siblings('td').addClass('highlighted');
+			$('tbody input[type=checkbox]').parents().find('button').addClass('disabled');
+			$('#deleteAll').removeClass('disabled');
+		}else if (!$(this).is(':checked')){
+			$('tbody input[type=checkbox]').prop('checked', false);
+			$('tbody td').removeClass('highlighted');
+			$('tbody button').removeClass('disabled');
+		}
+		
+	});
+	</script>
+		
+	<script>
+		$('#deleteAll').click(function(){
+			var del = $('tbody tr').find('input[type=checkbox]');
+			var c = confirm('You are about to delete ALL Appointments...Are you Sure?');
+			if(c){
+				del.each(function(){
+					if($(this).is(':checked')) {
+						$(this).parents('tr').fadeOut(function(){
+							$(this).remove();
+						});
+					}
+				});
+			}
+			$('#checkAll').attr('checked', false);
+		});
+	</script>
+	
 	
 </html>

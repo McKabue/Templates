@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="" content=""/>
+		<meta charset="UTF-8"/> 
+		<link type="text/css" rel="stylesheet" href="Other/font-awesome-4.2.0/css/font-awesome.min.css">
+		<link type="text/css" rel="stylesheet" href="Other/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="Other/bootstrapValidator.css">
+		<link type="text/css" rel="stylesheet" href="Other/select2-3.5.2/select2.css">
+		<link type="text/css" rel="stylesheet" href="Other/pro.css">
+		<!--[if lt IE 9]>
+		<script src="html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<style>
+	.carousel>.carousel-inner>.item>.circleElement {
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 11%;
+    left: 39%;
+    width: 400px;
+    height: 400px;
+    opacity: .5;
+}
+.carousel-indicators {
+    top: 35px;
+    background: #404549;
+    padding: 30px;
+    border-radius: 10px;
+}
+.carousel-indicators li { cursor: pointer }
+.carousel-control {
+    width: 60px;
+    height: 0;
+    margin-top: -20px;
+    font-size: 100px;
+    background: none;
+    border: none;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+}
+.carousel-indicators li {
+    background-color: #999;
+    background-color: rgba(255,255,255,0.3);
+}
+.carousel-caption {
+    padding: 35px;
+    text-align: center;
+}
+.carousel-caption h4 {
+    font-family: "lato";
+    font-weight: 100;
+    font-size: 61px;
+}
+.carousel-caption p {
+    font-family: "lato";
+    margin-top: 39px;
+    font-size: 22px;
+    margin-bottom: -8px;
+    font-weight: 300;
+    line-height: 30px;
+}
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active { opacity: 1 }
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right { opacity: 1 }
+.carousel-fade .carousel-control { z-index: 2 }
+@media only screen and (max-width:767px) { 
+    h1 { font-size: 30px !important }
+    .carousel-caption {
+        padding: 15px;
+        text-align: center;
+    }
+    .carousel-caption h4 { font-size: 30px }
+    .carousel-caption p {
+        margin-top: 10px;
+        font-size: 10px;
+        margin-bottom: -10px;
+    }
+    body { padding: 0 !important }
+    .carousel { margin-bottom: 0 }
+    .hero-unit { padding-bottom: 60px }
+    .hero-unit p { font-size: 16px }
+}
+.carousel-container {
+    width: 80% !important;
+    padding-left: 10%;
+    margin-top: 35px;
+}
+	</style>
+
+	<body>
+		<div class="container">
+
+			<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<!-- ///////////////////////////////////////////////////////NAVIGATION////////////////////////////////////////////////////////////// -->
+			<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <a class="navbar-brand" data-toggle="" data-target="#bs-example-navbar-collapse-1" href="#">JustVote System</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling --
+			<div style="" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			   <ul id="myTab" class="nav nav-tabs nav-justified">
+				   <li class="active"><a href="#home" data-toggle="tab">Welcome Home</a></li>
+				   <li><a href="#aspirants" data-toggle="tab">Aspirants</a></li> 		   
+				   <li><a href="#ios" data-toggle="tab">Cast Vote</a></li> 
+				   <li><a href="#jmeter" data-toggle="tab">View Results</a></li> 
+				</ul> 
+			</div><!-- /.navbar-collapse -->
+			
+			<div style="" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul id="myTab" class="nav nav-tabs nav-justified" data-bind="foreach: navis">
+					<li><a data-toggle="tab" data-bind="text: $data, attr: { href: '#' + $data }, click: $root.goToNavi"></a></li>
+				</ul>
+			</div>
+
+			<div class="clear"></div>
+		
+			<div style="padding-top: 20px;" id="myTabContent" class="tab-content">
+			
+			<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<!-- ///////////////////////////////////////////////////////HOME//////////////////////////////////////////////////////////////////// -->
+			<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			   <div class="tab-pane fade" id="Home"> 
+				<!-- Carousel
+				================================================== -->
+				<div id="carousel" class="carousel slide carousel-fade">
+
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+              <div data-slide-no="0" class="item carousel-item active">
+                <img src="Other/Wallpaper_16.jpg" alt="First slide">
+                <div class="carousel-caption">
+                  <h4>We Help You Estimate!</h4>
+                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+              </div>
+              <div data-slide-no="1" class="item carousel-item">
+                <img src="Other/Wallpaper_57.jpg" alt="Second slide">
+                <div class="carousel-caption">
+                  <h4>second thumbnail</h4>
+                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+              </div>
+              <div data-slide-no="2" class="item carousel-item">
+                <img src="Other/Wallpaper_41.jpg" alt="Third slide">
+                <div class="carousel-caption">
+                  <h4>Third Thumbnail label</h4>
+                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#carousel" data-slide="prev">‹</a>
+            <a class="carousel-control right" href="#carousel" data-slide="next">›</a>
+          </div>
+				
+				
+			   <div class="">
+				  <div class="page-header"><h2>Example page header  <small>Subtext for header</small></h2></div> 
+				  <p>This is a sample text.This is a sample text.This is a sample text.    This is a sample text.</p>
+			   </div>
+			   
+			   </div> 
+			   
+			<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<!-- ///////////////////////////////////////////////////////ASPIRANTS/////////////////////////////////////////////////////////////// -->
+			<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+				<div class="tab-pane fade" id="Aspirants"> 
+					<div class="row"> 
+					<div id="myAspirantsTab">
+					   <div class="col-md-2"> 
+						  <a href="#" class="thumbnail"> 
+							 <img src="Other/picture005.jpg"           alt="Generic placeholder thumbnail"> 
+						  </a> 
+
+						  <div class="caption"> 
+							 <h3>Thumbnail label</h3> 
+							 <p>Some sample text. Some sample text.</p> 
+							 <p> 
+								<a href="#candidate1" data-toggle="tab" class="btn btn-primary" role="button"> 
+								   info 
+								</a>  
+								<a href="#" class="btn btn-default" role="button"> 
+								   Button 
+								</a> 
+							 </p> 
+						  </div> 
+					   </div> 
+					   <div class="col-md-2"> 
+						  <a href="#" class="thumbnail"> 
+							 <img src="Other/Wallpaper_57.jpg"           alt="Generic placeholder thumbnail"> 
+						  </a> 
+						  <div class="caption"> 
+							 <h3>Thumbnail label</h3> 
+							 <p>Some sample text. Some sample text.</p> 
+							 <p> 
+								<a href="#candidate2" data-toggle="tab" class="btn btn-primary" role="button"> 
+								   info 
+								</a>  
+								<a href="#" class="btn btn-default" role="button"> 
+								   Button 
+								</a> 
+							 </p> 
+						  </div> 
+					   </div>
+					   <div class="col-md-2"> 
+						  <a href="#" class="thumbnail"> 
+							 <img src="Other/picture005.jpg"           alt="Generic placeholder thumbnail"> 
+						  </a> 
+
+						  <div class="caption"> 
+							 <h3>Thumbnail label</h3> 
+							 <p>Some sample text. Some sample text.</p> 
+							 <p> 
+								<a href="#candidate3" data-toggle="tab" class="btn btn-primary" role="button"> 
+								   info 
+								</a>  
+								<a href="#" class="btn btn-default" role="button"> 
+								   Button 
+								</a> 
+							 </p> 
+						  </div> 
+					   </div> 
+					   <div class="col-md-2"> 
+						  <a href="#" class="thumbnail"> 
+							 <img src="Other/Wallpaper_57.jpg"           alt="Generic placeholder thumbnail"> 
+						  </a> 
+						  <div class="caption"> 
+							 <h3>Thumbnail label</h3> 
+							 <p>Some sample text. Some sample text.</p> 
+							 <p> 
+								<a href="#candidate4" data-toggle="tab" class="btn btn-primary" role="button"> 
+								   info 
+								</a>  
+								<a href="#" class="btn btn-default" role="button"> 
+								   Button 
+								</a> 
+							 </p> 
+						  </div> 
+					   </div>
+					   </div>
+						<div style="" id="myAspirantsTabContent" class="col-md-4 tab-content">
+							<div style="" id="candidate1" class="tab-pane fade">
+								<div class="panel-group" id="accordion">
+								  <div class="panel panel-default">
+									<div class="panel-heading">
+									  <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">About 'NAME' </a></h4>
+									</div>
+									<div id="collapseOne" class="panel-collapse collapse in">
+									  <div class="panel-body">
+										<dl class="dl-horizontal">   
+											<dt>First Name</dt>   <dd>Item 1</dd>   
+											<dt>Last Name</dt>   <dd>Item 2</dd> 
+											<dt>SurName</dt>   <dd>Item 1</dd>   
+											<dt>Birth Date</dt>   <dd>Item 2</dd>
+											<dt>Contacts</dt>   <dd>Item 2</dd> <dd>Item 2</dd> <dd>Item 2</dd> <dd>Item 2</dd>
+											<dt>Social Media</dt>   <dd>Item 2</dd> <dd>Item 2</dd> <dd>Item 2</dd> <dd>Item 2</dd>
+											<dt>Seat</dt>   <dd>Item 1</dd>   
+											<dt>Education</dt>   <dd>Item 2</dd>
+											<dt>Leadership</dt>   <dd>Item 2</dd> <dd>Item 2</dd> <dd>Item 2</dd> <dd>Item 2</dd> 
+											<dt>Nationality</dt>   <dd>Item 1</dd> 
+											<dt>County</dt>   <dd>Item 2</dd>											
+											<dt>Constituency</dt>   <dd>Item 2</dd>
+											<dt>Province</dt>   <dd>Item 2</dd>											
+											<dt>District</dt>   <dd>Item 2</dd>
+											<dt>Division</dt>   <dd>Item 2</dd>
+											<dt>Location</dt>   <dd>Item 2</dd>											
+											<dt>Sub-Location</dt>   <dd>Item 2</dd>
+											<dt>Village</dt>   <dd>Item 2</dd>							
+										</dl>
+									  </div>
+									</div>
+								  </div>
+								  <div class="panel panel-default">
+									<div class="panel-heading">
+									  <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"> Promises </a></h4>
+									</div>
+									<div id="collapseThree" class="panel-collapse collapse">
+									  <div class="panel-body">
+										<blockquote><p> This is a default blockquote example. This is a default blockquote example. This is a default blockquote example.This is a default blockquote example. This is a default blockquote example.</p></blockquote>
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									  </div>
+									</div>
+								  </div>
+								  <div class="panel panel-default">
+									<div class="panel-heading">
+									  <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">What are People saying?!</a></h4>
+									</div>
+									<div id="collapseFour" class="panel-collapse collapse">
+										<div class="panel-body">
+											<ul id="myTab3" class="nav nav-tabs">
+											   <li class="active"><a href="#comments" data-toggle="tab">Comments</a></li>
+											   <li><a href="#credit" data-toggle="tab">Credit</a></li> 		    
+											</ul> 
+										  <div id="myTabContent3" class="tab-content">
+											 <div class="tab-pane fade in active" id="comments">
+												comments Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+											 </div>
+											 <div class="tab-pane fade" id="credit">
+												credit Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+											 </div>
+										  </div>
+										</div>
+									</div>
+								  </div>
+								</div>
+							</div>
+							<div style="" id="candidate2" class="tab-pane fade">
+						   CANDITATES STATISTICS GOES HERE....2
+							</div>
+							<div style="" id="candidate3" class="tab-pane fade">
+						   CANDITATES STATISTICS GOES HERE....3
+							</div>
+						</div>					   
+				</div>
+			   </div> 
+			   
+			<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<!-- ///////////////////////////////////////////////////////CAST VOTE/////////////////////////////////////////////////////////////// -->
+			<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			   <div class="tab-pane fade" id="Vote"> 
+				  <div class="panel-group" id="accordion2">
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion2" href="#collapseOne2">
+						  Step 1 : Terms of Voting
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseOne2" class="panel-collapse collapse in">
+					  <div class="panel-body">
+						<ol type="a" style="font-size:16px;">
+						  <li class="">Cras justo odio</li>
+						  <li class="">Dapibus ac facilisis in</li>
+						  <li class="">Morbi leo risus</li>
+						  <li class="">Porta ac consectetur ac</li>
+						  <li class="">Vestibulum at eros</li>
+						</ol>
+						<div class="" style="padding-left:20px; padding-top:10px;"><span style="padding-right:10px; font-style:italic; font-size:18px; font-weight:bold; "> Do you Agree to bound by these Rules?</span> <button type="submit" style="" class="btn btn-success">Yes</button><button type="submit" style="" class="btn btn-danger">No</button></div>
+						
+						<br />
+						<div class="form-group">
+							<label for="fun" class="col-sm-4 col-md-4 control-label text-right">Is it fun ?</label>
+							<div class="col-sm-7 col-md-7">
+								<div class="input-group">
+									<div id="radioBtn" class="btn-group">
+										<a class="btn btn-primary btn-sm active" data-toggle="fun" data-title="Y">YES</a>
+										<a class="btn btn-primary btn-sm notActive" data-toggle="fun" data-title="X">I don't know</a>
+										<a class="btn btn-primary btn-sm notActive" data-toggle="fun" data-title="N">NO</a>
+									</div>
+									<input type="hidden" name="fun" id="fun">
+								</div>
+							</div>
+						</div>
+						
+					  </div>
+					</div>
+				  </div>
+				  <div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo2">Step 2 : Login / Register</a></h4>
+						</div>
+						<div id="collapseTwo2" class="panel-collapse collapse">
+							<div class="panel-body">
+								<ul id="myTab4" class="nav nav-tabs">
+									<li class="active"><a href="#login" data-toggle="tab">Login</a></li>
+									<li><a href="#register" data-toggle="tab">Register</a></li> 		    
+								</ul> 
+								<div id="myTabContent4" class="tab-content">
+									<div class="tab-pane fade in active" id="login">
+										<div style="width: 350px;">
+														<form style="" id="loginForm" class="navbar-form form" role="form" data-bind="submit: Login">
+																<div class="form-group">
+																	<div class="input-group">
+																		<span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+																		<!--EMAIL ADDRESS-->
+																		<input ffpdm="sllsk9tlqkgb19q0h93te" id="emailInput" placeholder="email address" class="form-control" type="email" name="email">
+																	</div>
+																</div>
+																<div class="form-group">
+																	<div class="input-group">
+																		<span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+																		<!--PASSWORD-->
+																		<input ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="password" class="form-control" type="password" name="password">
+																	</div>
+																</div><br/>
+																<div class="form-group">
+																	<!--BUTTON-->
+																	<button type="submit" class="btn btn-success form-control">Login</button>
+																</div>
+																
+														</form>
+											</div>
+										<!--END sign up modal-->
+									</div>
+									<div class="tab-pane fade" id="register">
+										<!--sign up modal-->
+											 <div style="width: 500px;">
+														<form style="" id="signupForm" class="navbar-form form" role="form" data-bind="submit: SignUp">
+																<div class="form-group">
+																	<div class="input-group">
+																		<span style="width:200px;" class="input-group-addon">SurName</span>
+																		<input style="width: 300px;" placeholder="first name" class="form-control" name="firstname">
+																	</div>
+																</div>
+																
+																<div class="form-group">
+																	<div class="input-group">
+																		<span style="width:200px;" class="input-group-addon">First Name</span>
+																		<input style="width: 300px;" placeholder="first name" class="form-control" name="firstname">
+																	</div>
+																</div>
+																
+																<div class="form-group">
+																	<div class="input-group">
+																		<span style="width:200px;" class="input-group-addon">Last Name</span>
+																		<input style="width: 300px;" placeholder="last name" class="form-control" name="lastname">
+																	</div>
+																</div>
+																
+																<div class="form-group">
+																	<div class="input-group">
+																		<span style="width:200px;" class="input-group-addon">Reg. Number</span>
+																		<input style="width: 300px;" placeholder="last name" class="form-control" name="lastname">
+																	</div>
+																</div>
+																
+																<div class="form-group">
+																	<div class="input-group">
+																		<span style="width:200px;" class="input-group-addon">ID Number</span>
+																		<input style="width: 300px;" placeholder="National ID" class="form-control" name="firstname">
+																	</div>
+																</div>
+																
+																<div class="form-group">
+																	<div class="input-group">
+																		<span style="width:200px;" class="input-group-addon">Stream</span>
+																		<input style="width: 300px;" placeholder="last name" class="form-control" name="lastname">
+																	</div>
+																</div>
+																
+																<div class="form-group">
+																	<div class="input-group">
+																		<span style="width:200px;" class="input-group-addon">Faculty</span>
+																		<select class="select11" style="width: 300px;" name="falcuty">
+																			<option></option>
+																			   <option value="AZ">Arizona</option>
+																			   <option value="CO">Colorado</option>
+																			   <option value="ID">Idaho</option>
+																			   <option value="MT">Montana</option><option value="NE">Nebraska</option>
+																			   <option value="NM">New Mexico</option>
+																			   <option value="ND">North Dakota</option>
+																			   <option value="UT">Utah</option>
+																			   <option value="WY">Wyoming</option>
+																		</select>
+																	</div>
+																</div>
+																
+																<div class="form-group">
+																	<div class="input-group">
+																		<span style="width:200px;" class="input-group-addon">Course</span>
+																		<input style="width: 300px;" placeholder="Course" class="form-control" name="lastname">
+																	</div>
+																</div>
+																
+																<div class="form-group">
+																	<div class="input-group">
+																		<span style="width:200px;" class="input-group-addon">Email</span>
+																		<!--EMAIL ADDRESS-->
+																		<input style="width: 300px;" ffpdm="sllsk9tlqkgb19q0h93te" id="emailInput" placeholder="email address" class="form-control" type="email" name="email">
+																	</div>
+																</div>
+																
+																
+																
+																<div class="form-group">
+																	<div class="input-group">
+																		<span style="width:200px;" class="input-group-addon">Password</span>
+																	<!--PASSWORD-->
+																	<input style="width: 300px;" ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="password" class="form-control" type="password" name="password">
+																</div>
+																</div>
+																
+																<div class="form-group">
+																	<div class="input-group">
+																		<span style="width:200px;" class="input-group-addon">Confirm Password</span>
+																		<!--PASSWORD-->
+																		<input style="width:300px;" ffpdm="4j1x06h10f6jxmd6j6urs" id="passwordInput" placeholder="confirm password" class="form-control" type="password" name="confirmpassword">
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<button  type="submit" class="btn btn-success form-control">Register</button>
+																</div>
+																
+																
+														</form>
+											</div>
+										<!--END sign up modal-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion2" href="#collapseThree2">
+						  Step 2 : 	Choose Candidates by Filling the Form
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseThree2" class="panel-collapse collapse">
+					  <div class="panel-body">
+						
+										<form style="width: 350px;" id="" class="navbar-form form" role="form" data-bind="">
+													<dl class="dl-horizontal">
+														<dt>President</dt>   
+														<dd><select data-placeholder='President' id="president" class="select11" style="width: 300px;">
+																<option></option>
+																   <option value="AK">Mickel</option>
+																   <option value="HI">James</option>
+																   <option value="CA">Sandney</option>
+															</select>
+														</dd> 
+														<dd>
+															<input id="runningMate" placeholder="running mate" class="form-control" type="" name="" style="width: 300px;" disabled>
+														</dd>
+												</dl>
+
+												<dl class="dl-horizontal">
+													<dt>Secretary General</dt>   
+														<dd><select data-placeholder='Secretary General' class="select11" style="width: 300px;">
+																<option></option>
+																   <option value="AK">Alaska</option>
+																   <option value="HI">Hawaii</option>
+																   <option value="CA">California</option>
+																   <option value="NV">Nevada</option>
+																   <option value="OR">Oregon</option>
+															</select>
+														</dd>
+												</dl>
+												
+												<dl class="dl-horizontal">
+													<dt>Financial Controller</dt>   
+														<dd><select data-placeholder='Financial Controller' class="select11" style="width: 300px;">
+																<option></option>
+																   <option value="AK">Alaska</option>
+																   <option value="HI">Hawaii</option>
+																   <option value="CA">California</option>
+																   <option value="NV">Nevada</option>
+																   <option value="OR">Oregon</option>
+															</select>
+														</dd>
+												</dl>
+												
+												<dl class="dl-horizontal">
+													<dt>Faculty representative</dt>   
+														<dd><select data-placeholder='Choose Faculty' id="faculty" class="select11" style="width: 300px;">
+																<option></option>
+																<option value="fist">fist</option>
+																<option value="commerce">commerce</option>
+																<option value="spas">spas</option>
+															</select>
+														</dd>
+														<dd><select data-placeholder='Faculty representative' id='representative' class="select11" style="width: 300px;">
+																<option></option>
+															</select>
+														</dd>
+												</dl>
+										</form>
+									
+						<!--END sign up modal-->
+					  </div>
+					</div>
+				  </div>
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion2" href="#collapseFour2">
+						  Step 3 : Confirm Your Choice
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseFour2" class="panel-collapse collapse">
+					  <div class="panel-body" style="padding:55px;">
+						<div class="panel panel-primary">
+						  <div class="panel-heading">Please Confirm Your Choice</div>
+						  <div class="panel-body">
+							<p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						  </div>
+
+						  <!-- Table -->
+						  <table class="table table-striped">
+							<thead>
+							  <tr>
+								<th>#</th>
+								<th>Seat</th>
+								<th>Name</th>
+								<th>Change</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+								<td>1</td>
+								<td>president</td>
+								<td>Mark Jacob</td>
+								<td>Edit Remove</td>
+							  </tr>
+							  <tr>
+								<td>2</td>
+								<td>Financial Controller</td>
+								<td>Otto Thornton</td>
+								<td>Edit Remove</td>
+							  </tr>
+							  <tr>
+								<td>3</td>
+								<td>Secretary General</td>
+								<td>Larry the Bird</td>
+								<td>Edit Remove</td>
+							  </tr>
+							</tbody>
+						  </table>
+						</div>
+
+						<hr/>
+						
+						<div class="" style="">
+							<button type="submit" style="font-size:1.5em;" class="btn btn-success pull-right">Click Here to Vote, if you are Sure...</button>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				  <div class="panel panel-default">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion2" href="#collapseFive2">
+						  After Vote Message
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseFive2" class="panel-collapse collapse">
+					  <div class="panel-body">
+						<p style="color:#000; font-size:18px;">Thank You very much for voting</p>
+					  </div>
+					</div>
+				  </div>
+				  
+				</div>
+			   </div> 
+			   
+			<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<!-- ///////////////////////////////////////////////////////VIEW RESULTS//////////////////////////////////////////////////////////// -->
+			<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			   <div class="tab-pane fade" id="Results"> 
+				
+				  <div class="row row-offcanvas row-offcanvas-left">
+					<div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+						<div class="tabbable tabs-left">
+							 <ul id="myTabSide" class="nav nav-tabs" data-tabs="tabs" style="width:100%;">
+								 <li class="active"><a href="#1" data-toggle="tab">Nav item</a> </li>
+								 <li><a href="#2" data-toggle="tab">Nav item again</a></li>
+								 <li><a href="#3" data-toggle="tab">One more nav</a></li>
+							 </ul>
+						</div>
+					</div>
+					
+					
+						<div style="" class="col-xs-12 col-sm-10">
+							<p class="visible-xs">
+								<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Show Sidebar</button>
+							</p>
+							<h1 class="page-header">Dashboard</h1>
+
+						  <div class="row placeholders">
+							<div class="col-xs-6 col-sm-3 placeholder">
+							  <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+							  <h4>Label</h4>
+							  <span class="text-muted">Something else</span>
+							</div>
+							<div class="col-xs-6 col-sm-3 placeholder">
+							  <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+							  <h4>Label</h4>
+							  <span class="text-muted">Something else</span>
+							</div>
+							<div class="col-xs-6 col-sm-3 placeholder">
+							  <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+							  <h4>Label</h4>
+							  <span class="text-muted">Something else</span>
+							</div>
+							<div class="col-xs-6 col-sm-3 placeholder">
+							  <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+							  <h4>Label</h4>
+							  <span class="text-muted">Something else</span>
+							</div>
+						  </div>
+
+						  <h2 class="sub-header">Section title</h2>
+						  <div id="container" style="width:700px; height:400px;">
+							<p>chart goes here...</p>
+						  </div>
+						</div>
+				</div>
+			   </div> 
+			   
+			</div> <!-- /tab-content -->	
+		</div> <!-- /container -->	
+	</body>
+  
+	<script type='text/javascript' src="Other/jquery.js"></script>
+	<script type='text/javascript' src="Other/bootstrap.js"></script>
+	<script type="text/javascript" src="Other/knockout-3.2.0.js"></script>
+	<script type='text/javascript' src="Other/bootstrapValidator.js"></script>
+	<script type='text/javascript' src="Other/myValidate2.js"></script>
+	<script type='text/javascript' src="Other/Placeholder.js"></script>
+	<script type='text/javascript' src="Other/Highcharts-4.0.4/js/highcharts.js"></script>
+	<script type='text/javascript' src="Other/select2-3.5.2/select2.js"></script>
+	<script type="text/javascript" src="Other/summyjs/min/sammy-0.7.6.min.js"></script>
+	<script>
+		function ViewModel() {
+			// Data
+			var self = this;
+			self.navis = ['Home', 'Aspirants', 'Vote', 'Results'];
+			
+			// Behaviours 		
+			self.goToNavi = function(navi) { 
+				location.hash = navi;
+			};
+			self.chosenTab = function(tabname) {
+				$('#myTab a[href="#' + tabname + '"]').tab('show');
+			}
+			
+			// Client-side routes    
+			Sammy(function () {
+				this.get('#:navi', function () {
+					self.goToNavi(this.params.navi);
+					self.chosenTab(this.params.navi);
+				});
+				
+				this.get('', function() { this.app.runRoute('get', '#Home') });
+			}).run();
+		};
+		
+		ko.applyBindings(new ViewModel());
+	</script>
+	<script>
+			$(".select11").select2({	
+				allowClear: true
+			});
+	</script>
+	<script>
+		$(function () { 
+			$('#container').highcharts({
+				chart: {
+					type: 'bar'
+				},
+				title: {
+					text: 'Fruit Consumption'
+				},
+				xAxis: {
+					categories: ['Apples', 'Bananas', 'Oranges']
+				},
+				yAxis: {
+					title: {
+						text: 'Fruit eaten'
+					}
+				},
+				series: [{
+					name: 'Jane',
+					data: [1, 0, 4]
+				}, {
+					name: 'John',
+					data: [5, 7, 3]
+				}]
+			});
+		});
+	</script>
+	<script> 
+	   $(function () { 
+			$('#myAspirantsTab div:eq(0) a').tab('show'); 
+	   }); 		   
+	</script> 
+
+	<script>
+		$(document).ready(function () {
+		  $('[data-toggle=offcanvas]').click(function () {
+			$('.row-offcanvas').toggleClass('active')
+		  });
+		});
+	</script>
+	
+	
+	<script>
+      $(function(){
+        $('#president').select2({
+			allowClear: true
+		})
+        .on("select2-selecting", function(e) {
+			if (e.choice.text == "Mickel"){ $('#runningMate').val('Mercy is ' + e.choice.text + "'s Running Mate"); }
+			else if (e.choice.text == "James"){ $('#runningMate').val('Mukami is ' + e.choice.text + "'s Running Mate"); }
+			else if (e.choice.text == "Sandney"){ $('#runningMate').val('Moses is ' + e.choice.text + "'s Running Mate"); }
+        })
+		
+		$('#representative').select2({
+			allowClear: true
+		});
+		
+		
+		$('#faculty').select2({
+			allowClear: true
+		})
+        .on("select2-open", function() {
+			fist=new Array("jamo","sam","kaka","jane");
+			commerce=new Array('chalo','mark','timo');
+			spas=new Array('ali','Elke','Fred','Bobby','Frits');
+			
+			$('#faculty').change(function(){ populateSelect(); });
+			function populateSelect(){
+				var representative = $('#faculty').val();
+				$('#representative').select2("data","");
+				$('#representative').html('<option></option>');
+			
+				eval(representative).forEach(function(t) { 
+				  //$('#representative').select2("val":"");
+					$('#representative').append('<option>'+t+'</option>');
+				});
+			}
+        })
+		
+		
+		
+
+	  });
+    </script>
+	<script>
+		$('#radioBtn a').on('click', function(){
+			var sel = $(this).data('title');
+			var tog = $(this).data('toggle');
+			$('#'+tog).prop('value', sel);
+			
+			$('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
+			$('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
+		})
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script>
+	// Generated by CoffeeScript 1.7.1
+$(document).ready(function() {
+  $(".carousel").carousel({
+    interval: 2000
+  });
+  $(".carousel").on("slid", function() {
+    var to_slide;
+    to_slide = $(".carousel-item.active").attr("data-slide-no");
+    $(".myCarousel-target.active").removeClass("active");
+    $(".carousel-indicators [data-slide-to=" + to_slide + "]").addClass("active");
+  });
+  $(".myCarousel-target").on("click", function() {
+    $(this).preventDefault();
+    $(".carousel").carousel(parseInt($(this).attr("data-slide-to")));
+    $(".myCarousel-target.active").removeClass("active");
+    $(this).addClass("active");
+  });
+});
+
+	</script>
+
+</html>
