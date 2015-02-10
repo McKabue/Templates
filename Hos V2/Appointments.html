@@ -313,11 +313,19 @@
 						<div class="panel panel-default">
 						  <!-- Default panel contents -->
 						  <div class="panel-heading" style="font-size:1.5em;">Panel heading</div>
-						  <div class="panel-heading" style="font-size:1.5em;">
-							<input style="width:30%;" id="filter" type="text" class="form-control" placeholder="Type here...">
-							<span style="padding-left:5px;"> <button type="button" id="deleteAll" class="btn btn-danger">Delete All</button> <input id="checkAll" class="largerCheckbox pull-right" style="font-size:1.5em;" type="checkbox"> </span>
+						  <div class="panel-heading" style="padding-bottom:40px;">
+						  <div class="col-md-3"><input style="" id="filter" type="text" class="form-control" placeholder="Type to Search here..."></div>
+						  <div class="col-md-3"><select style=""  class="form-control">
+							<option>Time</option>
+							<option>Sickness</option>
+							<option>Urgency</option>
+							<option>Name</option>
+						  </select></div>
+						  <div class="col-md-1 pull-right"><input id="checkAll" class="largerCheckbox pull-right" style="font-size:1.5em;" type="checkbox"></div>
+						  <div class="col-md-2 pull-right"><button type="button" id="deleteAll" class="btn btn-danger">Delete All Checked</button></div>
 						</div>
 
+						<div class="">
 						  <!-- Table 1 -->
 						  <table class="table table-striped table-condensed" style="border-collapse:collapse;">
 							<thead>
@@ -350,7 +358,10 @@
 									</div>
 									<span style="padding-left:5px; font-size:1.5em;"> <input class="largerCheckbox" style="font-size:1.5em;" type="checkbox"> </span>
 								</td>
-								<tr>
+								
+							  </tr>
+							  
+							  <tr>
 									<td colspan="5" class="hiddenRow">
 										<div class="collapse demo1" style=" padding:20px;">
 
@@ -596,7 +607,45 @@
 										</div>
 									</td>
 								</tr>
-							  </tr>
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
 							  
 							  <tr>
 								<td>2</td>
@@ -617,12 +666,18 @@
 									</div>
 									<span style="padding-left:5px; font-size:1.5em;"> <input class="largerCheckbox" style="font-size:1.5em;" type="checkbox"> </span>
 								</td>
-								<tr>
+								
+							  </tr>
+							  <tr>
 									<td colspan="5" class="hiddenRow">
-										<div id="demo2" class="collapse"><p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
+										<div id="demo2" class="collapse"><p> z Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
 									</td>
 								</tr>
-							  </tr>
+								
+								
+								
+								
+								
 							  
 							  <tr>
 								<td>3</td>
@@ -643,17 +698,29 @@
 									</div>
 									<span style="padding-left:5px; font-size:1.5em;"> <input class="largerCheckbox" style="font-size:1.5em;" type="checkbox"> </span>
 								</td>
-								<tr>
+								
+							  </tr>
+							  
+							  
+							  <tr>
 									<td colspan="5" class="hiddenRow">
-										<div id="demo3" class="collapse"><p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
+										<div id="demo3" class="collapse"><p>q Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
 									</td>
 								</tr>
-							  </tr>
 							</tbody>
 						  </table> 
+						  </div>
+							<div  style="margin-top: -20px;"class="panel-footer">
+								<ul class="pager pager-lg">
+								  <li class="disabled"><a href="#">Previous</a></li>
+								  <li><a href="#">Next</a></li>
+								</ul>
+
+							</div>
 						</div>					
 					</form>
 			   </div> 
+			   
 			   <div class="tab-pane fade" id="cancel">	 
 					<form id="" class="form-horizontal" role="form" style="background-color:#E0EAF1; padding:20px; border:4px solid #AAA;font-size:1.2em;">
 						<div class="panel panel-default">
@@ -815,11 +882,17 @@
 		$('#filter').keyup(function () {
 
             var rex = new RegExp($(this).val(), 'i');
+			var here = $('tbody input[type=checkbox]').parent().parent().siblings('td');
 			$('.collapse.in').collapse('hide');
+			
+			//$('tbody input[type=checkbox]').parent().parent('td').hide();
             $('tbody input[type=checkbox]').parents('tr').hide();
-            $('tbody input[type=checkbox]').parents('tr').filter(function () {
+
+			$('tbody input[type=checkbox]').parents('tr').filter(function () {
                 return rex.test($(this).text());
             }).show();
+			
+          
 
         })
 	</script>
@@ -844,17 +917,14 @@
 	<script>
 		$('#deleteAll').click(function(){
 			var del = $('tbody tr').find('input[type=checkbox]');
-			var c = confirm('You are about to delete ALL Appointments...Are you Sure?');
-			if(c){
+			//var c = confirm('You are about to delete ALL Appointments...Are you Sure?');
+			//if(c){
 				del.each(function(){
 					if($(this).is(':checked')) {
-						$(this).parents('tr').fadeOut(function(){
-							$(this).remove();
-						});
+						$(this).parents('tr').remove();;
 					}
 				});
-			}
-			$('#checkAll').attr('checked', false);
+			//}
 		});
 	</script>
 	
