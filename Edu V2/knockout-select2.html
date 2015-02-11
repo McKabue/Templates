@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Knockout Select2</title>
+
+	<link type="text/css" rel="stylesheet" href="Other/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="Other/select2-3.5.2/select2.css">
+	
+</head>
+<body>
+
+<div>
+	<select data-bind="value: db, options: dbs, select2: {}"></select>
+	<span data-bind="text: db"></span>
+	<select data-bind="value: db, options: dbs, select2: {}"></select>
+</div>
+
+
+
+<pre>
+<code>
+// put select2 after value and options
+&lt;select data-bind=&quot;value: foo, options: foos, select2: {}&quot;&gt;&lt;/select&gt;
+</code>
+</pre>
+
+</body>
+	<script type='text/javascript' src="Other/jquery.js"></script>
+	<script type="text/javascript" src="Other/knockout-3.2.0.js"></script>
+	<script type='text/javascript' src="Other/select2-3.5.2/select2.js"></script>
+	<script type='text/javascript' src="Other/knockout-select2-master/knockout-select2.js"></script>
+	<script>
+		var model = {
+			db: ko.observable('Neo4j'),
+			dbs: ["Redis", "Datomic", "Neo4j", "MongoDB", "CouchDB"]
+		};
+		ko.applyBindings(model);
+	</script>
+</html>

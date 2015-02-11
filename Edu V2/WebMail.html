@@ -6,6 +6,7 @@
 		<meta charset="UTF-8"/> 
 		<link type="text/css" rel="stylesheet" href="Other/font-awesome-4.2.0/css/font-awesome.min.css">
 		<link type="text/css" rel="stylesheet" href="Other/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="Other/select2-3.5.2/select2.css">
 		<style>
 			body { font-family: Helvetica, Arial}
 			.folders { background-color: #bbb; list-style-type: none; padding: 0; margin: 0; border-radius: 7px; 
@@ -74,11 +75,25 @@
     </div>
 
 		</div>
+		
+		
+		
+		<div>
+				<div>
+			<select multiple="true" data-bind="options: values, selectedOptions: selected, select2: { placeholder: 'pick some colors' }"></select>
+		</div>
+
+		<hr/>
+
+		<pre data-bind="text: ko.toJSON($root, null, 2)"></pre>
+
+		</div>
 	</body>
 	
 	<script type='text/javascript' src="Other/jquery.js"></script>
 	<script type='text/javascript' src="Other/bootstrap.js"></script>
 	<script type="text/javascript" src="Other/knockout-3.2.0.js"></script>
+	<script type='text/javascript' src="Other/select2-3.5.2/select2.js"></script>
 	<script type="text/javascript" src="Other/summyjs/min/sammy-0.7.6.min.js"></script>
 	<script>
 		var fakeData = {};
@@ -138,5 +153,22 @@
 
 		ko.applyBindings(new WebmailViewModel());
 
+	</script>
+	
+	
+	<script>
+	ko.bindingHandlers.select2 = {
+    init: function(element, valueAccessor) {
+      var options = ko.toJS(valueAccessor()) || {};
+      setTimeout(function() { 
+          $(element).select2(options);
+      }, 0);
+    }
+};    
+
+ko.applyBindings({
+    values: ["red", "grey", "blue"],
+    selected: ko.observableArray(["blue"])    
+});
 	</script>
 </html>
