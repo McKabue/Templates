@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="" content=""/>
+		<meta charset="UTF-8"/> 
+		<link type="text/css" rel="stylesheet" href="Other/bootstrap.css">
+		
+		<style>
+		/* 1st level */
+.nav label {
+	color: blue;
+}
+
+/* 2nd level */
+.tree > li > label {
+  padding:10px 15px;  
+}
+/* 2nd level */
+.tree > li > label {
+  padding:10px 15px;  
+}
+
+/* 3rd level */
+.tree > li > ul > li > a {
+  color:#cc0000;
+  font-size:10pt;
+  margin-left:15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS used here will be applied after bootstrap.css */
+li ul.collapse {
+  visibility: visible;
+}
+
+
+		</style>
+	</head>
+
+	<body>
+
+
+
+
+
+
+
+
+<li class="nav-header">
+  <a href="#" data-toggle="collapse" data-target="#userMenu">
+    User <i class="icon-angle-down"></i>
+  </a>
+  <ul style="list-style: none;" class="collapse in" id="userMenu">
+    <li class="active"><a href="#"><i class="icon-home"></i>Home</a></li>
+    <li><a href="#"><i class="icon-envelope-alt"></i>Messages <span class="badge badge-info">4</span></a></li>
+    <li><a href="#"><i class="icon-cogs"></i>Settings</a></li>
+    <li><a href="#"><i class="icon-comment"></i>Shoutbox</a></li>
+    <li><a href="#"><i class="icon-user"></i>Staff List</a></li>
+    <li><a href="#"><i class="icon-flag"></i>My Infractions</a></li>
+    <li><a href="#"><i class="icon-exclamation-sign"></i>Rules &amp; Regulations</a></li>
+    <li><a href="#"><i class="icon-off"></i>Logout</a></li>
+  </ul>
+</li>
+<li class="nav-header">
+  <a href="#" data-toggle="collapse" data-target="#radioDJMenu">
+    Radio DJ <i class="icon-angle-right"></i>
+  </a>
+  <ul style="list-style: none;" class="collapse" id="radioDJMenu">
+    <li><a href="#">Information &amp; Stats</a></li>
+    <li><a href="#">DJ Says</a></li>
+    <li><a href="#">Request Line</a></li>
+    <li><a href="#">Timetable</a></li>
+    <li><a href="#">Banned Songs</a></li>
+  </ul>
+</li>
+<li class="nav-header">
+<a href="#" data-toggle="collapse" data-target="#headDJMenu">
+    Head DJ <i class="icon-angle-right"></i>
+  </a>
+  <ul style="list-style: none;" class="collapse" id="headDJMenu">
+    <li><a href="#"><i class="icon-"></i>All Banned Songs</a></li>
+  </ul>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+  	<h1>Bootstrap 3 Tree Menu Example</h1>
+  </div>
+
+  <div class="row">
+      <div class="col-md-3">
+          <div class="well">
+              <div>
+                  <ul class="nav">
+                      <li>
+                          <label label-default="" class="tree-toggle nav-header">Bootstrap</label>
+                          <ul class="nav tree">
+                              <li><a href="#">JavaScript</a>
+                              </li>
+                              <li><a href="#">CSS</a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li>
+                        <label label-default="" class="tree-toggle nav-header">Buttons</label>
+                        <ul class="nav tree">
+                          <li><a href="#">Colors</a>
+                          </li>
+                          <li><a href="#">Sizes</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <label label-default="" class="tree-toggle nav-header">Responsive</label>
+                        <ul class="nav tree">
+                          <li><a href="#">Overview</a>
+                          </li>
+                          <li><a href="#">CSS</a>
+                          </li>
+                          <li>
+                            <label label-default="" class="tree-toggle nav-header">Media Queries</label>
+                            <ul class="nav tree">
+                              <li><a href="#">Text</a>
+                              </li>
+                              <li><a href="#">Images</a>
+                              </li>
+                              <li>
+                                <label label-default="" class="tree-toggle nav-header">Mobile</label>
+                                <ul class="nav tree">
+                                  <li><a href="#">iPhone</a>
+                                  </li>
+                                  <li><a href="#">Samsung</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" id="leftCol">
+      <ul class="nav nav-stacked menu" id="sidebar">
+        <li>
+          <a href="#menu1" class="list-group-item"> Menu 1
+            <b class="caret pull-right"></b> <i class="fa fa-caret-down"></i></a>
+          <ul class="collapse" id="menu1">
+            <a href="#" class="list-group-item">sub1 to menu 1<i class="fa fa-caret-down"></i></a>
+            <a href="#" class="list-group-item">sub2 to menu 1<i class="fa fa-caret-down"></i></a>
+            <a href="#" class="list-group-item">sub3 to menu 1<i class="fa fa-caret-down"></i></a>
+          </ul>
+        </li>
+        <li>
+          <a href="#menu2" class="list-group-item"> Menu 2
+            <b class="caret pull-right"></b> <i class="fa fa-caret-down"></i></a>
+          <ul class="collapse" id="menu2">
+            <a href="#" class="list-group-item">sub1 to menu 2<i class="fa fa-caret-down"></i></a>
+            <a href="#" class="list-group-item">sub2 to menu 2<i class="fa fa-caret-down"></i></a>
+            <a href="#" class="list-group-item">sub3 to menu 2<i class="fa fa-caret-down"></i></a>
+          </ul>
+        </li>
+        <li>
+          <a href="#menu3" class="list-group-item"> Menu 3
+            <b class="caret pull-right"></b> <i class="fa fa-caret-down"></i></a>
+          <ul class="collapse" id="menu3">
+            <a href="#" class="list-group-item">sub1 to menu 3<i class="fa fa-caret-down"></i></a>
+            <a href="#" class="list-group-item">sub2 to menu 3<i class="fa fa-caret-down"></i></a>
+            <a href="#" class="list-group-item">sub3 to menu 3<i class="fa fa-caret-down"></i></a>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+  		<div class="panel">
+          <h1>Panel Content change</h1>
+          <br>
+          <h2> Put Your content here !!! </h2>
+          <h2><a href="#"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+            <br>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <br>
+            <hr>
+            </h2><h4>Edit By Me !!!</h4>
+          <hr>
+      	</div>
+  </div>
+</div></div>
+
+
+            <div id="push"></div>
+        
+
+
+</body>
+
+
+<script type='text/javascript' src="Other/jquery.js"></script>
+	<script type='text/javascript' src="Other/bootstrap.js"></script>
+	<script type='text/javascript'>
+		$('[data-toggle=collapse]').click(function(){
+			
+			// toggle icon
+			$(this).find("i").toggleClass("icon-angle-right icon-angle-down");
+		  
+		});
+
+		$('.collapse').on('show', function (e) {
+		  
+			// hide open menus
+			$('.collapse').each(function(){
+			if ($(this).hasClass('in')) {
+			    $(this).collapse('toggle');
+			}
+		    });
+		  
+		})
+
+//////////////////////
+
+
+		$('.tree-toggle').click(function () {
+			$(this).parent().children('ul.tree').toggle(200);
+		});
+		
+		
+		/////////////////////////
+		$(function() {
+        var menu_ul = $('.menu > li > ul'),
+               menu_a  = $('.menu > li > a');
+        menu_ul.hide();
+        menu_a.click(function(e) {
+            e.preventDefault();
+            if(!$(this).hasClass('active')) {
+                menu_a.removeClass('active');
+                menu_ul.filter(':visible').slideUp('normal');
+                $(this).addClass('active').next().stop(true,true).slideDown('normal');
+            } else {
+                $(this).removeClass('active');
+                $(this).next().stop(true,true).slideUp('normal');
+            }
+        });
+    });
+</script>

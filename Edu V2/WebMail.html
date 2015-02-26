@@ -52,12 +52,13 @@
     
     <!-- Mails grid -->
     <table class="mails" data-bind="with: chosenFolderData">
-        <thead><tr><th>From</th><th>To</th><th>Subject</th><th>Date</th></tr></thead>
+        <thead><tr><th>From</th><th>To</th><th>Subject</th><<th>Date</th></tr></thead>
         <tbody data-bind="foreach: mails">
             <tr data-bind="click: $root.goToMail">
                 <td data-bind="text: from"></td>
                 <td data-bind="text: to"></td>
                 <td data-bind="text: subject"></td>
+				<!--td><input data-bind="select2: {}" class="select2-form-control" style=""></td-->
                 <td data-bind="text: date"></td>
             </tr>     
         </tbody>
@@ -95,6 +96,7 @@
 	<script type="text/javascript" src="Other/knockout-3.2.0.js"></script>
 	<script type='text/javascript' src="Other/select2-3.5.2/select2.js"></script>
 	<script type="text/javascript" src="Other/summyjs/min/sammy-0.7.6.min.js"></script>
+	<script type='text/javascript' src="Other/knockout-select2-master/knockout-select2.js"></script>
 	<script>
 		var fakeData = {};
 

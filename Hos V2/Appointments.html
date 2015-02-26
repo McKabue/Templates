@@ -361,14 +361,19 @@
 								
 							  </tr>
 							  
-							  <tr>
+							  <tr class="warning">
 									<td colspan="5" class="hiddenRow">
 										<div class="collapse demo1" style=" padding:20px;">
 
 										<div id="detailsTabContent" class="tab-content">
 											<div class="tab-pane fade in active details">
 												<div style="">
-													<p>DETAILS GO HERE...</p>		
+													<dl class="dl-horizontal">
+														<dt>Description 1</dt>
+														<dd>Item 1</dd>
+														<dt>Description 2</dt>
+														<dd>Item 2</dd>
+													</dl>		
 												</div>
 											</div>
 									
@@ -685,13 +690,13 @@
 								<td>the Bird</td>
 								<td>@twitter</td>
 								<td><div class="btn-group">
-									  <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo3">View</button>
+									  <button type="button" class="btn btn-default" data-toggle="collapse" data-target=".demo3">View</button>
 									  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
 										<span class="caret"></span>
 										<span class="sr-only">Toggle Dropdown</span>
 									  </button>
 									  <ul class="dropdown-menu" role="menu">
-										<li><a href="#">Edit</a></li>
+										<li><a data-target=".edit3" data-toggle="tab" href="#">Edit</a></li>
 										<li><a href="#">Delete</a></li>
 										<li><a href="#">Select</a></li>
 									  </ul>
@@ -702,9 +707,251 @@
 							  </tr>
 							  
 							  
-							  <tr>
+							  <tr class="warning">
 									<td colspan="5" class="hiddenRow">
-										<div id="demo3" class="collapse"><p>q Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
+										<div class="collapse demo3" style=" padding:20px;">
+
+										<div id="detailsTabContent" class="tab-content">
+											<div class="tab-pane fade in active details">
+												<div style="">
+													<dl class="dl-horizontal">
+														<dt>Description 1</dt>
+														<dd>Item 1</dd>
+														<dt>Description 2</dt>
+														<dd>Item 2</dd>
+													</dl>		
+												</div>
+											</div>
+									
+												<div class="tab-pane fade edit3">
+													<form class="form-horizontal" role="form" style="">
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3" style="">
+																	<label style="" class="pull-right">Your Official Name</label>
+																</div>
+																<div class="col-md-9"  style="">
+																	<div class="">
+																		<ul class="list-inline">
+																			<li>Kabue</li>
+																			<li>Charles</li>
+																			<li>Njogu</li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">National ID Number</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																				<ul class="list-inline">
+																					<li>29393333</li>
+																				</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">Registration Number</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																				<ul class="list-inline">
+																					<li>IN16/20017/12</li>
+																				</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">Birth Date</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																			<ul class="list-inline">
+																					<li>12/2/1995</li>
+																				</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">Program</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																			<ul class="list-inline">
+																					<li>JAB</li>
+																				</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">Year</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																			<ul class="list-inline">
+																					<li>Year 3</li>
+																				</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">Semester</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																			<ul class="list-inline">
+																					<li>Semester 1</li>
+																				</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">Faculty</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																			<ul class="list-inline">
+																					<li>FIST</li>
+																				</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">Course</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																			<ul class="list-inline">
+																					<li>Software</li>
+																				</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<hr/>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">How Are You Feeling?</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																			<ul class="list-inline">
+																				<li>Headach</li>
+																				<li>Tired</li>
+																				<li>Joint Pains</li>
+																			</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">Possible Causes</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																			<ul class="list-inline">
+																				<li>Was rained on</li>
+																				<li>Malaria</li>
+																				<li>bad water</li>
+																			</ul>
+																	</div>
+																</div>
+															</div>
+															
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">Medical Type</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																			<ul class="list-inline">
+																				<li>General</li>
+																			</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">Available Doctors</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																			<ul class="list-inline">
+																				<li>Dr.Kamau</li>
+																			</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<hr/>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">Appointment Date</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																			<ul class="list-inline">
+																				<li>2/3/15</li>
+																			</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">Appointment Time</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																			<ul class="list-inline">
+																				<li>03:12:54 hours</li>
+																			</ul>
+																	</div>
+																</div>
+															</div>
+															
+															<div class="row form-group" style="margin-bottom: 0px;">
+																<div class="col-md-3">
+																	<label style="" class="pull-right">Appointment Status</label>
+																</div>
+																<div class="col-md-9">
+																	<div class="">
+																			<ul class="list-inline">
+																				<li>Confirmed</li>
+																			</ul>
+																	</div>
+																</div>
+															</div>
+															
+																
+														</form>
+												</div>
+										</div>
+										
+											
+										
+										</div>
 									</td>
 								</tr>
 							</tbody>
@@ -754,17 +1001,28 @@
 	<script type='text/javascript' src="Other/myValidate.js"></script>
 	<script>
 			$("#tags1,#tags2").select2({
+				initSelection : function (element, callback) {
+					var countryId = "IN"; //Your values that somehow you parsed them
+					var countryText = "INDIA";
+
+					var data = [];//Array
+
+					data.push({id: countryId, text: countryText, locked: true});//Push values to data array
+
+
+					callback(data); //Fill'em
+				},
 				allowClear: true,
 				placeholder: "Write Tags Here...",
 				//createSearchChoice:function(term, data) {return {id:term, text:term};},
 				//createSearchChoice:function(term, data) { if ($(data).filter(function() { return this.text.localeCompare(term)===0; }).length===0) {return {id:term, text:term};} },
 				multiple: true,
-				tags:[],
+				tags: [],
 				tokenSeparators: [","]
 				//maximumInputLength: 15,
 				//maximumSelectionSize: 5
 				//data: [{id: 0, text: 'story', locked: true},{id: 1, text: 'bug'},{id: 2, text: 'task'}]
-            });
+			}).select2('val', []);
 			
 			$(".select11").select2({	
 				allowClear: true

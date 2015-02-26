@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Knockout Select2</title>
+	
+	<link type="text/css" rel="stylesheet" href="Other/inlineforknockout.css">
+</head>
+<body>
+	<div data-bind='simpleGrid: gridViewModel'> </div>
+
+	<button data-bind='click: addItem'>
+		Add item
+	</button>
+	 
+	<button data-bind='click: sortByName'>
+		Sort by name
+	</button>
+	 
+	<button data-bind='click: jumpToFirstPage, enable: gridViewModel.currentPageIndex'>
+		Jump to first page
+	</button> 
+	
+	<script id="ko_simpleGrid_grid" type="text/html">                    <table class="ko-grid" cellspacing="0">                        <thead>                            <tr>                               <th >Item Name</th>                                                           <th >Sales Count</th>                                                           <th >Price</th>                            </tr>                       </thead>                        <tbody data-bind="foreach: itemsOnCurrentPage">                           <tr data-bind="foreach: $parent.columns">                               <td data-bind="text: typeof rowText == 'function' ? rowText($parent) : $parent[rowText] "></td>                            </tr>                        </tbody>                    </table></script>
+	<script id="ko_simpleGrid_pageLinks" type="text/html">                    <div class="ko-grid-pageLinks">                        <span>Page:</span>                        <!-- ko foreach: ko.utils.range(0, maxPageIndex) -->                               <a href="#" data-bind="text: $data + 1, click: function() { $root.currentPageIndex($data) }, css: { selected: $data == $root.currentPageIndex() }">                            </a>                        <!-- /ko -->                    </div></script>
+</body>
+	
+	<script type="text/javascript" src="Other/knockout-3.2.0.js"></script>
+	<script type="text/javascript" src="Other/knockout.simpleGrid.3.0.js"></script>
+	<script>
+		var initialData = [
+			{ name: "Well-Travelled Kitten", sales: 352, price: 75.95 },
+			{ name: "Speedy Coyote", sales: 89, price: 190.00 },
+			{ name: "Furious Lizard", sales: 152, price: 25.00 },
+			{ name: "Indifferent Monkey", sales: 1, price: 99.95 },
+			{ name: "Brooding Dragon", sales: 0, price: 6350 },
+			{ name: "Ingenious Tadpole", sales: 39450, price: 0.35 },
+			{ name: "Optimistic Snail", sales: 420, price: 1.50 }
+		];
+		 
+		var PagedGridModel = function(items1) {
+			this.items = ko.observableArray(items1);
+		 
+			this.addItem = function() {
+				this.items.push({ name: "New item", sales: 0, price: 100 });
+			};
+		 
+			this.sortByName = function() {
+				this.items.sort(function(a, b) {
+					return a.name < b.name ? -1 : 1;
+				});
+			};
+		 
+			this.jumpToFirstPage = function() {
+				this.gridViewModel.currentPageIndex(0);
+			};
+		 
+			this.gridViewModel = new ko.simpleGrid.viewModel({
+				data: this.items,
+				
+				pageSize: 4
+			});
+		};
+		 
+		ko.applyBindings(new PagedGridModel(initialData));
+	</script>
+</html>
