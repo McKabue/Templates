@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>
+.row {
+	margin-left: -20px;
+	*zoom:1: ;
+}
+/* @media all and (min-width:1200px) */
+.row {
+	margin-left: -30px;
+	*zoom:1: ;
+}
+.row::before, .row::after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.row::after {
+	clear: both;
+}
+/* @media all and (min-width:1200px) */
+.row::before, .row::after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+/* @media all and (min-width:1200px) */
+.row::after {
+	clear: both;
+}
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+	width: 940px;
+}
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	*zoom:1: ;
+}
+/* @media all and (min-width:1200px) */
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+	width: 1170px;
+}
+.container::before, .container::after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.container::after {
+	clear: both;
+}
+body {
+	margin: 0;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333333;
+	background-color: #ffffff;
+}
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+[class*='span'] {
+	float: left;
+	min-height: 1px;
+	margin-left: 20px;
+}
+.span12 {
+	width: 940px;
+}
+/* @media all and (min-width:1200px) */
+[class*='span'] {
+	float: left;
+	min-height: 1px;
+	margin-left: 30px;
+}
+/* @media all and (min-width:1200px) */
+.span12 {
+	width: 1170px;
+}
+.carousel-container {
+	width: 80% !important;
+	padding-left: 10%;
+	margin-top: 35px;
+}
+.carousel {
+	position: relative;
+	margin-bottom: 20px;
+	line-height: 1;
+}
+ul, ol {
+	padding: 0;
+	margin: 0 0 10px 25px;
+}
+.carousel-indicators {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	z-index: 5;
+	margin: 0;
+	list-style: none;
+}
+.carousel-indicators {
+	top: 35px;
+	background: #404549;
+	padding: 30px;
+	border-radius: 10px;
+}
+li {
+	line-height: 20px;
+}
+.carousel-indicators li {
+	display: block;
+	float: left;
+	width: 10px;
+	height: 10px;
+	margin-left: 5px;
+	text-indent: -999px;
+	background-color: #ccc;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 5px;
+}
+.carousel-indicators li {
+	cursor: pointer;
+}
+.carousel-indicators li {
+	background-color: #999;
+	background-color: rgba(255,255,255,0.3);
+}
+.carousel-indicators .active {
+	background-color: #fff;
+}
+.carousel-inner {
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+}
+a {
+	color: #0088cc;
+	text-decoration: none;
+}
+.carousel-control {
+	position: absolute;
+	top: 40%;
+	left: 15px;
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	font-size: 60px;
+	font-weight: 100;
+	line-height: 30px;
+	color: #ffffff;
+	text-align: center;
+	background: #222222;
+	border: 3px solid #ffffff;
+	-webkit-border-radius: 23px;
+	-moz-border-radius: 23px;
+	border-radius: 23px;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+.carousel-control {
+	width: 60px;
+	height: 0px;
+	margin-top: -20px;
+	font-size: 100px;
+	background: none;
+	border: none;
+	font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 300;
+}
+.right.carousel-control {
+	left: auto;
+	right: 15px;
+}
+.carousel-fade .carousel-control {
+	z-index: 2;
+}
+.carousel-inner > .item {
+	display: none;
+	position: relative;
+	-webkit-transition: 0.6s ease-in-out left;
+	-moz-transition: 0.6s ease-in-out left;
+	-o-transition: 0.6s ease-in-out left;
+	transition: 0.6s ease-in-out left;
+}
+.carousel-inner > .active {
+	left: 0px;
+}
+.carousel-fade .carousel-inner .item {
+	opacity: 0;
+	-webkit-transition-property: opacity;
+	-moz-transition-property: opacity;
+	-o-transition-property: opacity;
+	transition-property: opacity;
+}
+.carousel-inner > .active, .carousel-inner > .next, .carousel-inner > .prev {
+	display: block;
+}
+.carousel-fade .carousel-inner .active {
+	opacity: 1;
+}
+img {
+	max-width: 100%;
+	width: auto\9;
+	height: auto;
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+	display: block;
+	line-height: 1;
+}
+.carousel-caption {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	padding: 15px;
+	background: #333333;
+	background: rgba(0, 0, 0, 0.75);
+}
+.carousel-caption {
+	padding: 35px;
+	text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 10px 0;
+	font-family: inherit;
+	font-weight: bold;
+	line-height: 20px;
+	color: inherit;
+	text-rendering: optimizelegibility;
+}
+h4 {
+	font-size: 17.5px;
+}
+p {
+	margin: 0 0 10px;
+}
+.carousel-caption h4, .carousel-caption p {
+	color: #ffffff;
+	line-height: 20px;
+}
+.carousel-caption h4 {
+	margin: 0 0 5px;
+}
+.carousel-caption h4 {
+	font-family: "lato";
+	font-weight: 100;
+	font-size: 61px;
+}
+.carousel-caption p {
+	margin-bottom: 0px;
+}
+.carousel-caption p {
+	font-family: "lato";
+	margin-top: 39px;
+	font-size: 22px;
+	margin-bottom: -8px;
+	font-weight: 300;
+	line-height: 30px;
+}
+</style>
+</head>
+<body><div class="container"><div class="row">
+      <div class="span12 carousel-container">
+          <div class="carousel slide carousel-fade" id="carousel">
+
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+              <div class="item carousel-item" data-slide-no="0">
+                <img alt="" src="animals.jpg">
+                <div class="carousel-caption">
+                  <h4>We Help You Estimate!</h4>
+                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+              </div>
+              <div class="item carousel-item active" data-slide-no="1">
+                <img alt="" src="food.jpg">
+                <div class="carousel-caption">
+                  <h4>second thumbnail</h4>
+                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+              </div>
+              <div class="item carousel-item" data-slide-no="2">
+                <img alt="" src="cats.jpg">
+                <div class="carousel-caption">
+                  <h4>Third Thumbnail label</h4>
+                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#carousel" data-slide="prev">‹</a>
+            <a class="carousel-control right" href="#carousel" data-slide="next">›</a>
+          </div>
+          <ol class="carousel-indicators">
+            <li class="myCarousel-target" data-slide-to="0" data-target="#carousel"></li>
+            <li class="myCarousel-target active" data-slide-to="1" data-target="#carousel"></li>
+            <li class="myCarousel-target" data-slide-to="2" data-target="#carousel"></li>
+          </ol>
+
+      </div>
+    </div></div></body>
+</html>

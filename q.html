@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>
+.question-summary {
+	padding: 12px 0px 10px;
+	border-bottom-color: rgb(224, 224, 224);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+.question-summary {
+	padding: 15px 0px;
+	width: 728px;
+	overflow: hidden;
+	border-bottom-color: rgb(240, 240, 240);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	float: left;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0px;
+	padding: 0px;
+	border: 0px currentColor;
+	border-image: none;
+	font-size: 100%;
+}
+#question-mini-list {
+	overflow: auto;
+	margin-bottom: 30px;
+}
+.home-page #qlist-wrapper {
+	clear: both;
+}
+#mainbar, .mainbar {
+	margin: 0px;
+	padding: 0px;
+	width: 728px;
+	float: left;
+}
+#content::after {
+	clear: both;
+	display: table;
+	content: " ";
+}
+#content {
+	margin: 0px auto;
+	padding: 15px;
+	width: 1000px;
+	min-height: 450px;
+	box-sizing: content-box;
+	background-color: rgb(255, 255, 255);
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+}
+.container {
+	margin: 0px auto;
+	width: 100%;
+	text-align: left;
+}
+body {
+	background: rgb(255, 255, 255);
+	color: rgb(34, 34, 34);
+	line-height: 1.3em;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	min-width: 1030px;
+}
+html {
+	min-width: 1000px;
+}
+.narrow .cp {
+	margin-right: 10px;
+	vertical-align: top;
+	float: left;
+}
+.cp {
+	cursor: pointer;
+}
+.narrow .summary {
+	padding: 0px;
+	width: 530px;
+	float: left;
+}
+.summary {
+	width: 630px;
+	float: left;
+}
+#mainbar h2, .mainbar h2, #mainbar h3, .mainbar h3, #mainbar h4, .mainbar h4 {
+	font-weight: 400;
+}
+.narrow .summary h3 {
+	line-height: 1.3;
+	margin-bottom: 0.35em;
+}
+.summary h3 {
+	line-height: 1.4;
+	font-size: 15px;
+	margin-bottom: 0.5em;
+}
+h3 {
+	line-height: 1.3;
+	font-size: 15px;
+	margin-bottom: 1em;
+}
+.tags {
+	line-height: 18px;
+	float: left;
+}
+.narrow .started {
+	width: auto;
+	line-height: inherit;
+	padding-top: 4px;
+	white-space: nowrap;
+}
+.started {
+	width: 185px;
+	color: rgb(153, 153, 153);
+	line-height: 18px;
+	float: right;
+}
+.started-link {
+	color: rgb(153, 153, 153);
+	font-size: 12px;
+}
+a {
+	color: rgb(0, 119, 204);
+	text-decoration: none;
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+.started a:not(.started-link), .started .mod-flair {
+	color: rgb(0, 119, 204);
+	font-size: 12px;
+}
+.started .reputation-score {
+	color: rgb(119, 119, 119);
+	font-weight: normal;
+	margin-left: 1px;
+}
+.reputation-score {
+	font-size: 12px;
+	font-weight: bold;
+	margin-right: 2px;
+}
+.relativetime {
+	text-decoration: none;
+}
+.post-tag {
+	background: rgb(228, 237, 244);
+	margin: 2px 2px 2px 0px;
+	border-radius: 0px;
+	border: 1px solid rgb(228, 237, 244);
+	transition:color 0.15s, background 0.15s, border 0.15s;
+	border-image: none;
+	color: rgb(62, 109, 142);
+	font-size: 12px;
+	display: inline-block;
+	white-space: nowrap;
+	-webkit-transition: color 0.15s ease, background 0.15s ease, border 0.15s ease;
+	-moz-transition: color 0.15s ease, background 0.15s ease, border 0.15s ease;
+	-o-transition: color 0.15s ease, background 0.15s ease, border 0.15s ease;
+}
+.post-tag {
+	background: rgb(247, 253, 255);
+	margin: 2px 2px 2px 0px;
+	padding: 0.4em 0.5em;
+	border-radius: 15px;
+	border: 1px solid rgb(192, 212, 219);
+	border-image: none;
+	text-align: center;
+	color: rgb(86, 110, 118);
+	line-height: 1;
+	font-size: 11px;
+	text-decoration: none;
+	display: inline-block;
+	white-space: nowrap;
+}
+.answer-hyperlink, .question-hyperlink {
+	color: rgb(0, 119, 204);
+	line-height: 1.3;
+	margin-bottom: 1.2em;
+}
+.question-hyperlink {
+	font-size: 16px;
+	font-weight: 400;
+}
+.narrow .votes {
+	margin: 0px 3px 0px 0px;
+	padding: 5px 5px 6px;
+	height: 38px;
+	color: rgb(119, 119, 119);
+	font-size: 11px;
+	display: inline-block;
+	min-width: 38px;
+}
+.votes {
+	padding: 0px;
+	text-align: center;
+	margin-bottom: 8px;
+}
+.narrow .status {
+	margin: 0px 3px 0px 0px;
+	padding: 6px;
+	height: auto;
+	font-size: 11px;
+	display: inline-block;
+	min-width: 44px;
+}
+.status {
+	padding: 0px;
+	text-align: center;
+	margin-bottom: 8px;
+}
+.narrow .views {
+	margin: 0px 7px 0px 0px;
+	padding: 5px 5px 6px;
+	height: 38px;
+	color: rgb(119, 119, 119);
+	font-size: 11px;
+	display: inline-block;
+	min-width: 40px;
+}
+.views {
+	text-align: center;
+	padding-top: 4px;
+}
+.narrow .mini-counts {
+	color: rgb(119, 119, 119);
+	font-size: 17px;
+	font-weight: 300;
+	margin-bottom: 4px;
+}
+.unanswered .mini-counts span {
+	color: rgb(34, 34, 34);
+}
+</style>
+</head>
+<body class="home-page new-topbar"><div class="container"><div class="snippet-hidden" id="content"><div id="mainbar"><div id="qlist-wrapper"><div id="question-mini-list"><div class="question-summary narrow" id="question-summary-30303222">
+    <div class="cp">
+        <div class="votes">
+            <div class="mini-counts"><span title="0 votes">0</span></div>
+            <div>votes</div>
+        </div>
+        <div class="status unanswered">
+            <div class="mini-counts"><span title="0 answers">0</span></div>
+            <div>answers</div>
+        </div>
+        <div class="views">
+            <div class="mini-counts"><span title="1 view">1</span></div>
+            <div>view</div>
+        </div>
+    </div>
+    <div class="summary">
+        
+                    <h3><a title='I have a 3D columns chart in SSRS, based on a datasource coming from an OLAP cube. The measure A is shown as "a function" of dimensions D1 and D2.&#10;I draw a 3D columns chart (in Reporting Services. I ...' class="question-hyperlink" href="http://stackoverflow.com/questions/30303222/how-to-have-labels-on-all-three-axes-of-a-3d-columns-chart-in-ssrs">How to have labels on all THREE axes of a 3D columns chart in SSRS</a></h3>
+        <div class="tags t-reporting-services t-charts t-axis-labels">
+            <a title="show questions tagged 'reporting-services'" class="post-tag" href="http://stackoverflow.com/questions/tagged/reporting-services" rel="tag">reporting-services</a> <a title="show questions tagged 'charts'" class="post-tag" href="http://stackoverflow.com/questions/tagged/charts" rel="tag">charts</a> <a title="show questions tagged 'axis-labels'" class="post-tag" href="http://stackoverflow.com/questions/tagged/axis-labels" rel="tag">axis-labels</a> 
+        </div>
+        <div class="started">
+            <a class="started-link" href="http://stackoverflow.com/questions/30303222/how-to-have-labels-on-all-three-axes-of-a-3d-columns-chart-in-ssrs">asked <span title="2015-05-18 12:27:59Z" class="relativetime">just now</span></a>
+            <a href="http://stackoverflow.com/users/1671641/johannes-wentu">Johannes Wentu</a> <span title="reputation score " class="reputation-score" dir="ltr">41</span>
+        </div>
+    </div>
+</div></div></div></div></div></div></body>
+</html>

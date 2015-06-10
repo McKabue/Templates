@@ -1,0 +1,8 @@
+https://localhost:44300/#externalregistration/external_access_token=ya29.hwEuHe5qetWC8LWw7fcsywzjYBKffrsOnqRaNaZo_Mk3JAQUoNuK5E27Nq8YaHMbhfO_7mvE7Y1zEg&provider=Google&haslocalaccount=False&external_user_name=Charles%20Njogu&external_user_email=kabue7@gmail.com
+
+
+externalregistration
+
+
+
+https://localhost:44300/Index.html#externalregistration/ya29.hwEuHe5qetWC8LWw7fcsywzjYBKffrsOnqRaNaZo_Mk3JAQUoNuK5E27Nq8YaHMbhfO_7mvE7Y1zEg/Google/False/Charles%20Njogu/kabue7@gmail.com
