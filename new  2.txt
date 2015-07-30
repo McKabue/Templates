@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<style>
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+}
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+td, th {
+	padding: 0;
+}
+*::before, *::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+/* @media all and (min-width:768px) */
+.container {
+	width: 750px;
+}
+/* @media all and (min-width:992px) */
+.container {
+	width: 970px;
+}
+/* @media all and (min-width:1200px) */
+.container {
+	width: 1170px;
+}
+.clearfix::before, .clearfix::after, .dl-horizontal dd::before, .dl-horizontal dd::after, .container::before, .container::after, .container-fluid::before, .container-fluid::after, .row::before, .row::after, .form-horizontal .form-group::before, .form-horizontal .form-group::after, .btn-toolbar::before, .btn-toolbar::after, .btn-group-vertical > .btn-group::before, .btn-group-vertical > .btn-group::after, .nav::before, .nav::after, .navbar::before, .navbar::after, .navbar-header::before, .navbar-header::after, .navbar-collapse::before, .navbar-collapse::after, .pager::before, .pager::after, .panel-body::before, .panel-body::after, .modal-footer::before, .modal-footer::after {
+	display: table;
+	content: " ";
+}
+.clearfix::after, .dl-horizontal dd::after, .container::after, .container-fluid::after, .row::after, .form-horizontal .form-group::after, .btn-toolbar::after, .btn-group-vertical > .btn-group::after, .nav::after, .navbar::after, .navbar-header::after, .navbar-collapse::after, .pager::after, .panel-body::after, .modal-footer::after {
+	clear: both;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.4285;
+	color: #333;
+	background-color: #fff;
+}
+body {
+	font-family: Helvetica, Arial;
+}
+html {
+	font-size: 10px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+h2, .h2 {
+	font-size: 30px;
+}
+ul, ol {
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+.folders {
+	background-color: #bbb;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	border-radius: 7px;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #d6d6d6), color-stop(0.4, #c0c0c0), color-stop(1,#a4a4a4));
+	margin: 10px 0 16px 0;
+	font-size: 0px;
+}
+table {
+	background-color: transparent;
+}
+.mails {
+	width: 100%;
+	table-layout: fixed;
+	border-spacing: 0;
+}
+.mails thead {
+	background-color: #bbb;
+	font-weight: bold;
+	color: #444;
+	text-shadow: 0px 1px 1px #f7f7f7;
+}
+.mails tr:nth-child(2n) {
+	background-color: #EEE;
+}
+th {
+	text-align: left;
+}
+.mails th, .mails td {
+	text-align: left;
+	padding: 0.4em 0.3em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.mails th {
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #888;
+	padding: 0.4em 0 0.3em 0.7em;
+}
+.mails th:nth-child(1), .mails td:nth-child(1) {
+	width: 20%;
+}
+.mails th:nth-child(2), .mails td:nth-child(2) {
+	width: 15%;
+}
+.mails th:nth-child(3), .mails td:nth-child(3) {
+	width: 45%;
+}
+.mails th:nth-child(4), .mails td:nth-child(4) {
+	width: 15%;
+}
+.mails th:last-child {
+	border-right: none;
+}
+.folders li {
+	font-size: 16px;
+	font-weight: bold;
+	display: inline-block;
+	padding: 0.5em 1.5em;
+	cursor: pointer;
+	color: #444;
+	text-shadow: 0px 1px 1px #f7f7f7;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #888;
+}
+.folders li {
+	*display: inline !important: ;
+}
+.folders .selected {
+	background-color: #444 !important;
+	color: white;
+	text-shadow: none;
+	border-right-color: #aaa;
+	border-left: none;
+	box-shadow: inset 1px 2px 6px #070707;
+}
+.folders li:first-child {
+	border-left: none;
+	border-radius: 7px 0 0 7px;
+}
+</style>
+</head>
+<body><div class="container">
+			<h2 style="padding-bottom: 20px;">WebMail</h2>
+			
+    <!-- Folders -->
+    <ul class="folders" data-bind="foreach: folders">
+        <li class="selected" data-bind="text: $data, &#10;                       css: { selected: $data == $root.chosenFolderId() },&#10;                       click: $root.goToFolder">Inbox</li>
+    
+        <li data-bind="text: $data, &#10;                       css: { selected: $data == $root.chosenFolderId() },&#10;                       click: $root.goToFolder">Archive</li>
+    
+        <li data-bind="text: $data, &#10;                       css: { selected: $data == $root.chosenFolderId() },&#10;                       click: $root.goToFolder">Sent</li>
+    
+        <li data-bind="text: $data, &#10;                       css: { selected: $data == $root.chosenFolderId() },&#10;                       click: $root.goToFolder">Spam</li>
+    </ul>
+    
+    <!-- Mails grid -->
+    &lt;<table class="mails" data-bind="with: chosenFolderData">
+        <thead><tr><th>From</th><th>To</th><th>Subject</th><th>Date</th></tr></thead>
+        <tbody data-bind="foreach: mails">
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from">Abbot &lt;oliver@smoke-stage.xyz&gt;</td>
+                <td data-bind="text: to">steve@example.com</td>
+                <td data-bind="text: subject">Booking confirmation #389629244</td>
+				<!--td><input data-bind="select2: {}" class="select2-form-control" style=""></td-->
+                <td data-bind="text: date">May 25, 2011</td>
+            </tr>     
+        
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from">Addison Begoat &lt;upton.oprdrusson@pear-income.xyz&gt;</td>
+                <td data-bind="text: to">steve@example.com</td>
+                <td data-bind="text: subject">FW: Associate advice</td>
+				<!--td><input data-bind="select2: {}" class="select2-form-control" style=""></td-->
+                <td data-bind="text: date">May 7, 2011</td>
+            </tr>     
+        
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from">Allistair &lt;leroy72@plane-railway.xyz&gt;</td>
+                <td data-bind="text: to">steve@example.com</td>
+                <td data-bind="text: subject">RE: Phone call tomorrow 5 o'clock</td>
+				<!--td><input data-bind="select2: {}" class="select2-form-control" style=""></td-->
+                <td data-bind="text: date">May 19, 2011</td>
+            </tr>     
+        
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from">emmanuel26@ghost.xyz</td>
+                <td data-bind="text: to">steve@example.com</td>
+                <td data-bind="text: subject">Completing basketball project</td>
+				<!--td><input data-bind="select2: {}" class="select2-form-control" style=""></td-->
+                <td data-bind="text: date">May 22, 2011</td>
+            </tr>     
+        
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from">jamalia.alnismith1@twigdad.xyz</td>
+                <td data-bind="text: to">steve@example.com</td>
+                <td data-bind="text: subject">FW: Can you get DE to resubmit accounts?</td>
+				<!--td><input data-bind="select2: {}" class="select2-form-control" style=""></td-->
+                <td data-bind="text: date">Apr 26, 2011</td>
+            </tr>     
+        
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from">lionel.qugy@cribsmoke.xyz</td>
+                <td data-bind="text: to">steve@example.com</td>
+                <td data-bind="text: subject">RE: Catch up at 9:00 to finalise rain spec</td>
+				<!--td><input data-bind="select2: {}" class="select2-form-control" style=""></td-->
+                <td data-bind="text: date">May 22, 2011</td>
+            </tr>     
+        
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from">Madison Lalinesson &lt;melinda.gofagy@wing-language2.xyz&gt;</td>
+                <td data-bind="text: to">steve@example.com</td>
+                <td data-bind="text: subject">RE: Pencil scenarios</td>
+				<!--td><input data-bind="select2: {}" class="select2-form-control" style=""></td-->
+                <td data-bind="text: date">May 19, 2011</td>
+            </tr>     
+        
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from">rajah.nukripyford@cast92.xyz</td>
+                <td data-bind="text: to">steve@example.com</td>
+                <td data-bind="text: subject">Flavor benefit gig</td>
+				<!--td><input data-bind="select2: {}" class="select2-form-control" style=""></td-->
+                <td data-bind="text: date">Apr 28, 2011</td>
+            </tr>     
+        
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from">Sandra Juanhison &lt;yoshi.mostaline72@facefruit.xyz&gt;</td>
+                <td data-bind="text: to">steve@example.com</td>
+                <td data-bind="text: subject">RE: Apparel5 network is back up</td>
+				<!--td><input data-bind="select2: {}" class="select2-form-control" style=""></td-->
+                <td data-bind="text: date">May 8, 2011</td>
+            </tr>     
+        
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from">Sylvester &lt;rose.va@bunpig98.xyz&gt;</td>
+                <td data-bind="text: to">steve@example.com</td>
+                <td data-bind="text: subject">Feedback requested by Ayanna Nuyo</td>
+				<!--td><input data-bind="select2: {}" class="select2-form-control" style=""></td-->
+                <td data-bind="text: date">May 1, 2011</td>
+            </tr>     
+        
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from">veronica@heart.xyz</td>
+                <td data-bind="text: to">steve@example.com</td>
+                <td data-bind="text: subject">Project Book starting 6pm</td>
+				<!--td><input data-bind="select2: {}" class="select2-form-control" style=""></td-->
+                <td data-bind="text: date">May 4, 2011</td>
+            </tr>     
+        
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from">XLN &lt;basia@framehome.xyz&gt;</td>
+                <td data-bind="text: to">steve@example.com</td>
+                <td data-bind="text: subject">RE: Remember Whoopi's joke</td>
+				<!--td><input data-bind="select2: {}" class="select2-form-control" style=""></td-->
+                <td data-bind="text: date">May 8, 2011</td>
+            </tr>     
+        </tbody>
+    </table>
+    
+    <!-- Chosen mail -->
+    <div class="viewMail" data-bind="with: chosenMailData"></div>
+
+		</div></body>
+</html>

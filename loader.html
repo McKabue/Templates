@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+	display: block;
+}
+body {
+	margin: 0;
+}
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+*::before, *::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.st-loader {
+	position: relative;
+	left: 0px;
+	z-index: 10000;
+	width: 100%;
+	text-align: center;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.4285;
+	color: #333;
+	background-color: #fff;
+}
+html {
+	font-size: 10px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html, body {
+	height: 100%;
+}
+body {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+html {
+	position: relative;
+	min-height: 100%;
+}
+.st-loader span {
+	display: block;
+	margin: 0 auto;
+}
+.st-loader span[class*='l-'] {
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	border-radius: 100%;
+	margin: 12px 2px;
+	position: relative;
+	-webkit-animation: loader 4s infinite;
+	-moz-animation: loader 4s infinite;
+	-ms-animation: loader 4s infinite;
+	animation: loader 4s infinite;
+	-webkit-animation-timing-function: cubic-bezier(0.03, 0.615, 0.995, 0.415);
+	-moz-animation-timing-function: cubic-bezier(0.03, 0.615, 0.995, 0.415);
+	-ms-animation-timing-function: cubic-bezier(0.03, 0.615, 0.995, 0.415);
+	animation-timing-function: cubic-bezier(0.03, 0.615, 0.995, 0.415);
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode: both;
+	-ms-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.st-loader span.l-1 {
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	-o-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.st-loader span.l-2 {
+	-webkit-animation-delay: 0.8s;
+	-moz-animation-delay: 0.8s;
+	-o-animation-delay: 0.8s;
+	animation-delay: 0.8s;
+}
+.st-loader span.l-3 {
+	-webkit-animation-delay: 0.6s;
+	-moz-animation-delay: 0.6s;
+	-o-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+}
+.st-loader span.l-4 {
+	-webkit-animation-delay: 0.4s;
+	-moz-animation-delay: 0.4s;
+	-o-animation-delay: 0.4s;
+	animation-delay: 0.4s;
+}
+.st-loader span.l-5 {
+	-webkit-animation-delay: 0.2s;
+	-moz-animation-delay: 0.2s;
+	-o-animation-delay: 0.2s;
+	animation-delay: 0.2s;
+}
+.st-loader span.l-6 {
+	-webkit-animation-delay: 0s;
+	-moz-animation-delay: 0s;
+	-o-animation-delay: 0s;
+	animation-delay: 0s;
+}
+</style>
+</head>
+<body><article id="applicationHost"><div class="durandal-wrapper" data-view="shell" data-active-view="true"><div class="st-loader" style="top: -5px; position: fixed;">
+    <span class="l-1" style="background: rgb(0, 0, 0);"></span>
+    <span class="l-2" style="background: rgb(0, 0, 0);"></span>
+    <span class="l-3" style="background: rgb(0, 0, 0);"></span>
+    <span class="l-4" style="background: rgb(0, 0, 0);"></span>
+    <span class="l-5" style="background: rgb(0, 0, 0);"></span>
+    <span class="l-6" style="background: rgb(0, 0, 0);"></span>
+</div></div></article></body>
+
+
+
+
+<script src="Edu V2/Other/jquery.js"></script>
+<script>
+
+    var loader = (function () {        
+
+        function loader(target) {                                 
+           var self = this;
+           this.target = target;
+        }
+
+        loader.prototype.on = function(position, offset, color, insertiontype) {
+            var self = this;            
+            if (!self.target) { return; }
+			var loadercontainer = $('<div class="st-loader" />');
+            if (position) {
+                $(loadercontainer).css("position", position);
+            }
+            if (offset) {
+                $(loadercontainer).css("top", offset);
+            }
+            if (!color) {
+                color = "#000";
+            }
+            $(loadercontainer).append(
+                    $('<span class="l-1" style="background:' + color + ';"></span>' + 
+                      '<span class="l-2" style="background:' + color + ';"></span>' + 
+                      '<span class="l-3" style="background:' + color + ';"></span>' + 
+                      '<span class="l-4" style="background:' + color + ';"></span>' + 
+                      '<span class="l-5" style="background:' + color + ';"></span>' + 
+                      '<span class="l-6" style="background:' + color + ';"></span>'
+                     )
+            );
+            
+            if (!insertiontype || insertiontype != "prepend") {
+                $(self.target).append($(loadercontainer)[0]);
+            }
+            else {
+                $(self.target).prepend($(loadercontainer)[0]);
+            }
+			
+        }        
+        
+        loader.prototype.off = function() {
+            $(".st-loader").remove();
+        }
+
+        return loader;
+
+    })();
+
+    Stashy.Loader = function(sltor, options) {
+	    return new loader(sltor, options);
+	}
+
+
+</script>
+</html>
